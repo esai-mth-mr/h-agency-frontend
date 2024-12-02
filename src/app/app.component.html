@@ -1,0 +1,333 @@
+<!-- <h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a
+            href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more
+        details.</em></p> -->
+
+
+<main class="main bg-[#131517]">
+    <header class="flex justify-center">
+        <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
+            <div class="px-[15px]  flex justify-between items-center py-[20px] z-1">
+                <div class="company-logo flex items-center gap-[10px]">
+                    <div><img src="/assets/images/logo.svg" alt="no logo file"></div>
+                    <div class="font-[poppins-light] text-[14px] lg:text-[16px]">Nvidia Basket</div>
+                </div>
+                <div class="nav">
+                    <ul
+                        class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[80px] lg:text-[16px] font-[poppins-light]">
+                        <li>Solutions</li>
+                        <li>Resources</li>
+                        <li>Pricing</li>
+                    </ul>
+                    <div></div>
+                </div>
+                <div class="sign-btn">
+                    <button mat-raised-button
+                        class="bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[14px] px-[22px] py-[10px] lg:text-[16px] lg:h-[40px] font-[poppins-light]">Join
+                        Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="px-[35px]">
+                <div class=" pt-[50px] lg:pt-[110px] lg:w-[680px] lg:flex lg:justify-between lg:flex-col lg:mb-[160px]">
+                    <div
+                        class=" text-[24px] sm:text-[32px] lg:text-[58px] lg:leading-[68px] text-center lg:text-start font-[poppins-bold] ">
+                        Accelerate
+                        Your Future with
+                        NVIDIA AI</div>
+                    <div
+                        class="text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start lg:leading-[30px] font-[lato] mt-[20px] text-center text-[#BABABA]">
+                        Descubra
+                        uma vasta coleção
+                        de
+                        tutoriais, cursos
+                        online, livros
+                        recomendados e ferramentas de desenvolvimento para aprimorar suas habilidades e alcançar novos
+                        patamares na sua carreira
+                        tecnológica.
+                    </div>
+                    <div class="flex justify-center lg:justify-start gap-[20px] mt-[40px] mb-[30px]">
+                        <button
+                            class="text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
+                            h-[45px] bg-[#76B900] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Get
+                            Started</button>
+                        <button
+                            class="text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] learn-more border-[1px] border-solid border-[#FFFFFF66] h-[45px] rounded-[40px] px-[40px] font-[poppins-light]">Learn
+                            More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- <main><router-outlet /></main> -->
+    <div class="flex justify-center items-stretch">
+        <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
+            <div class="services mt-[80px]">
+                <div class="service-title flex justify-center">
+                    <div class="text-center">
+                        <div class="text-[20px] md:text-[24px] lg:text-[20px] text-[#E7FFBC] font-[poppins-bold]">
+                            Services</div>
+                        <div class="text-[24px] md:text-[32px] lg:text-[58px] font-[poppins-bold]">Our Core Services
+                        </div>
+                    </div>
+                </div>
+                <div class="service-detail ">
+                    <div class="container flex flex-wrap mt-[50px] px-[45px] lg:px-[0px] ">
+                        <div class="service-list W-full lg:w-[50%] pr-80px] px-[25px] lg:px-[0px]">
+                            <ul class="">
+                                <li class=" pt-[15px] pb-[5px]">
+                                    <div class="text-[28px]">AI Software Development</div>
+                                    <div class="text-[16px] text-[#989696]">Descubra uma vasta coleção de tutoriais,
+                                        cursos
+                                        online, livros
+                                        recomendados e
+                                        ferramentas de desenvolvimento p</div>
+                                </li>
+                                <li class=" pt-[15px] pb-[5px]">
+                                    <div class="text-[28px]">AI Infrastructure Solutions</div>
+                                    <div class="text-[16px] text-[#989696]">Descubra uma vasta coleção de tutoriais,
+                                        cursos
+                                        online, livros
+                                        recomendados e
+                                        ferramentas de desenvolvimento p</div>
+                                </li>
+                                <li class=" pt-[15px] pb-[5px]">
+                                    <div class="text-[28px] ">Specialized AI Solutions</div>
+                                    <div class="text-[16px] text-[#989696]">Descubra uma vasta coleção de tutoriais,
+                                        cursos
+                                        online, livros
+                                        recomendados e ferramentas de desenvolvimento p</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="service-image w-full mt-[50px] lg:mt-[0px] lg:w-[50%]"><img class="rounded-[25px]"
+                                src="/assets/images/security-center.jpg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="solutions mt-[80px]">
+                <div class="solution-title flex justify-center">
+                    <div class="text-center">
+                        <div class="text-[20px] md:text-[24px] lg:text-[20px] text-[#E7FFBC] font-[poppins-bold]">What
+                            We Offer</div>
+                        <div class="text-[24px] md:text-[32px] lg:text-[58px] font-[poppins-bold]">Our Solutions</div>
+                    </div>
+                </div>
+                <div class="solution-detail flex flex-wrap gap-[10px] mt-[60px]">
+                    <div class="solution-part-1 px-[40px] lg:px-[0px] lg:w-[33%]">
+                        <div class="relative ">
+                            <div
+                                class="absolute text-[20px] left-[18%] lg:left-[24%] top-[35%] leading-[50px] lg:text-[30px] font-[poppins-bold]">
+                                Generative AI Applications</div>
+                            <img class="service-img rounded-[10px] bg-[#09090B]" src="/assets/images/solutions/s1.png">
+                            <div class="hover-div w-full h-full bg-[#09090B]"></div>
+                        </div>
+                        <div class="relative mt-[10px]">
+                            <div class="absolute left-[17%] top-[36%] leading-[50px] text-[30px] font-[poppins-bold]">
+                                Edge
+                                Computing</div>
+                            <img class="service-img rounded-[10px]" src="/assets/images/solutions/s2.png">
+                        </div>
+                    </div>
+                    <div class="solution-part-2 px-[40px] lg:px-[0px] w-full lg:w-[32%]">
+                        <div class="relative h-full">
+                            <div
+                                class="absolute left-[4%] top-[50%] text-[30px] font-[poppins-bold] leading-[50px] text-center flex-1 ">
+                                High
+                                Performance
+                                Computing</div>
+                            <img class="service-img rounded-[10px] w-full h-full object-cover"
+                                src="/assets/images/solutions/s3.png">
+                        </div>
+                    </div>
+                    <div class="solution-part-3 px-[40px] lg:px-[0px] lg:w-[32.5%]">
+                        <div class="relative h-[30%]">
+                            <div class="absolute left-[17%] top-[35%]  leading-[50px] text-[25px] font-[poppins-bold]">
+                                Worry Free Pricing
+                            </div>
+                            <img class="service-img rounded-[10px] h-full w-full object-cover"
+                                src="/assets/images/solutions/s4.png">
+                        </div>
+                        <div class="relative  mt-[10px] h-[70%]">
+                            <div class="absolute left-[12%] top-[35%] leading-[50px] text-[30px] font-[poppins-bold]">
+                                Worry Free Pricing
+                            </div>
+                            <img class="service-img rounded-[10px] h-full object-cover"
+                                src="/assets/images/solutions/s5.png">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="solution-encourge mt-[60px] px-[40px] lg:px-[0px] lg-[0px]">
+                    <div
+                        class="flex items-center special-border bg-gradient-to-r from-[#09090B] to-[#101014] border-[#FFFFFF11] border-[2px] rounded-[25px]">
+                        <div
+                            class="w-[65%] h-full text-[18px] pt-[20px] leading-[22px] lg:text-[30px] lg:leading-[38px] px-[30px] lg:pt-[70px] pb-[40px] font-[poppins]">
+                            Unleash the
+                            Potential
+                            of AI and
+                            GPU
+                            Technology to Drive
+                            Innovation.
+                        </div>
+                        <div class="w-[35%] h-full relative overflow-hidden">
+                            <img class="object-cover rotate-45 -z-1" src="/assets/images/solutions/2.png">
+                            <img class="absolute  right-[18%] top-[40%] object-cover rotate-45 z-[1]"
+                                src="/assets/images/solutions/1.png">
+                            <img class=" absolute left-[10%] bottom-[70%] object-cover rotate-45 -z-1"
+                                src="/assets/images/solutions/3.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="industries mt-[70px] lg:mt-[120px]">
+                <div class="container">
+                    <div class="industries-title flex justify-center lg:justify-start">
+                        <div class="text-center lg:text-start">
+                            <div class="text-[20px] md:text-[24px] lg:text-[20px] text-[#E7FFBC] font-[poppins-bold]">
+                                Industries</div>
+                            <div class="text-[24px] md:text-[32px] lg:text-[58px] font-[poppins-bold]">Transforming
+                                Industries</div>
+                        </div>
+                    </div>
+                    <div class="industries-content flex flex-wrap justify-center items-center">
+                        <div
+                            class="industry-card mt-[50px] max-w-[550px] sm:w-[330px] md:w-[390px] lg:w-[280px] xl:w-[350px] ">
+                            <div
+                                class="container  border-[#ffffff22] border-[2px] rounded-[10px] px-[10px] pb-[30px]  pt-[50px]">
+                                <div class="industry-icon flex justify-center">
+                                    <img src="/assets/images/telecom.svg">
+                                </div>
+                                <div class="industry-title text-center font-[poppins-bold] text-[28px] mt-[15px]">
+                                    Telecom
+                                </div>
+                                <div class="industry-content text-center font-[lato] text-[14px] mt-[15px] px-[30px]">
+                                    Optimize 5G
+                                    networks with
+                                    NVIDIA-powered AI
+                                    solutions.
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="industry-card mt-[50px] max-w-[550px] sm:w-[330px] md:w-[390px] lg:w-[280px] xl:w-[350px] px-[20px]">
+                            <div
+                                class="container border-[#ffffff22] border-[2px] rounded-[10px] px-[10px] pb-[30px]  pt-[50px]">
+                                <div class="industry-icon flex justify-center pt-[50px]"><img
+                                        src="/assets/images/healthcare.svg">
+                                </div>
+                                <div class="industry-title text-center font-[poppins-bold] text-[28px] mt-[15px]">
+                                    Healthcare
+                                </div>
+                                <div class="industry-content text-center font-[lato] text-[14px] mt-[15px] px-[30px]">
+                                    Revolutionize
+                                    patient care
+                                    and drug discovery with
+                                    AI.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                            class="industry-card mt-[50px] max-w-[550px] sm:w-[330px] md:w-[390px] lg:w-[280px] xl:w-[350px] px-[20px]">
+                            <div
+                                class="container border-[#ffffff22] border-[2px] rounded-[10px] px-[10px] pb-[30px]  pt-[50px]">
+                                <div class="industry-icon flex justify-center pt-[50px]">
+                                    <img src="/assets/images/manufacturing.svg">
+                                </div>
+                                <div class="industry-title text-center font-[poppins-bold] text-[28px] mt-[15px]">
+                                    Manufacturing
+                                </div>
+                                <div class="industry-content text-center font-[lato] text-[14px] px-[30px] mt-[15px]">
+                                    Enable
+                                    predictive
+                                    maintenance and robotic
+                                    automation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="FAQ mt-[120px]">
+                <div class="FAQ-title flex justify-center">
+                    <div class="text-center">
+                        <div class="text-[20px] md:text-[24px] lg:text-[20px] text-[#E7FFBC] font-[poppins-bold]">
+                            Frequently Asked Questions</div>
+                        <div class="text-[24px] md:text-[32px] lg:text-[58px] font-[poppins-bold]">Got Questions? We've
+                            Got Answers.</div>
+                    </div>
+                </div>
+                <div class="FAQ-content"></div>
+            </div>
+
+            <div class="get-started-sub flex justify-around items-center">
+                <div>
+                    <div>Get Started</div>
+                    <div>Ready to Transform Your Business with AI?</div>
+                </div>
+                <button class="bg-white rounded-[25px] text-[24px]">Get Started For Free</button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-[#09090B99] flex justify-center">
+        <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
+            <div class="footer-widget flex justify-between mt-[70px] lg:px-[80px]">
+                <div class="footer-description w-[400px]">
+                    <div class="footer-logo flex items-center gap-[10px]">
+                        <img src="/assets/images/footer-logo.svg">
+                        <div>Nvidia Basket</div>
+                    </div>
+                    <div class="footer-description-content lg:mt-[10px]">Delivering cutting-edge NVIDIA-powered AI and
+                        GPU solutions
+                        to drive innovation and empower industries worldwide.</div>
+                </div>
+                <div class="footer-link flex items-center">
+                    <ul class="flex gap-[20px] text-[14px]">
+                        <li>About</li>
+                        <li>Blogs</li>
+                        <li>Support</li>
+                        <li>API Docs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright flex justify-between lg:px-[80px] my-[40px]">
+                <div>Copyright © 2025 Nvidia Basket</div>
+                <div>
+                    <ul class="flex gap-[20px] text-[14px]">
+                        <li>All Rights Reserved</li>
+                        <li>Terms and Conditions</li>
+                        <li> Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</main>
+<!--<table *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Datetime</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.date }}</td>
+            <td>{{ forecast.temperatureC }}</td>
+            <td>{{ forecast.temperatureF }}</td>
+            <td>{{ forecast.summary }}</td>
+        </tr>
+    </tbody>
+</table>-->

@@ -1,0 +1,64 @@
+﻿:host {
+    max-width: 1280px;
+    /* padding: 2rem;
+    text-align: center; */
+}
+
+th, td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+table {
+    margin: 0 auto;
+}
+
+
+/* 
+header::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+header{
+    position: relative;
+    /* width: 100%; */
+    z-index: 1;
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    z-index: -1;
+    background-image: url('/assets/images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.learn-more-btn, .get-started-btn {
+    border: 1px solid #fff !important;
+}
+
+.service-img{
+    filter: grayscale(100%); 
+    opacity: 0.25;
+    border: 2px solid #FFFFFF33;
+
+}
+
+button, .industry-card {
+    border: 1px solid linear-gradient(to right, #FFFFFF66 , #FFFFFF1A);
+
+}
+.special-border{
+    border: 1px solid linear-gradient(to right, #FFFFFF66 , #FFFFFF1A);
+}
