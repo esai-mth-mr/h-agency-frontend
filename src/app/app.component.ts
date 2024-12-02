@@ -14,9 +14,9 @@ interface WeatherForecast {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  standalone: true,
+  standalone: false,
   styleUrl: './app.component.css',
-  imports: [MatExpansionModule]
+  //imports: [MatExpansionModule]
 })
 export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];

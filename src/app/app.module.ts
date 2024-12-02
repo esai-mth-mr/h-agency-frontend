@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { BlogComponent } from './blog/blog.component';
 import { LandingComponent } from './landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -11,7 +12,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 @NgModule({
   declarations: [
     //HeaderHeroContentComponent,
-    AppComponent,
+    //AppComponent,
     //BlogComponent,
     //LandingComponent
   ],
