@@ -4,25 +4,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { bootstrapApplication } from '@angular/platform-browser';
 import { BlogComponent } from './blog/blog.component';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+
 
 @NgModule({
   declarations: [
     //HeaderHeroContentComponent,
-    //AppComponent,
+    AppComponent,
     //BlogComponent,
-    //LandingComponent
+    
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,  
+    LandingComponent  
   ],
+    
+
   providers: [
     provideAnimationsAsync()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppModule { }
+export class AppModule { 
+
+}

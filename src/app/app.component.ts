@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 //Angular Material
 import {MatExpansionModule} from '@angular/material/expansion';
+import {ChangeDetectionStrategy, signal} from '@angular/core';
+
 
 
 interface WeatherForecast {
@@ -16,7 +18,7 @@ interface WeatherForecast {
   templateUrl: './app.component.html',
   standalone: false,
   styleUrl: './app.component.css',
-  //imports: [MatExpansionModule]
+  //declarations: [MatExpansionModule]
 })
 export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];
