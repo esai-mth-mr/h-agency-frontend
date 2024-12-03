@@ -1,9 +1,9 @@
 import {ChangeDetectionStrategy, Component, ɵɵInputTransformsFeature, signal} from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion'; // Import the module here  
+import { MatExpansionModule } from '@angular/material/expansion';   
 
 @Component({
   selector: 'app-landing',
-  imports: [MatExpansionModule], // Include MatExpansionModule here  
+  imports: [MatExpansionModule], 
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,  
