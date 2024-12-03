@@ -3,9 +3,6 @@ import { Component, OnInit } from '@angular/core';
 //Angular Material
 import {MatExpansionModule} from '@angular/material/expansion';
 import {ChangeDetectionStrategy, signal} from '@angular/core';
-
-
-
 interface WeatherForecast {
   date: string;
   temperatureC: number;

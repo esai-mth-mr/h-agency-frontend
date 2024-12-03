@@ -7,22 +7,20 @@ import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
-
+import { MaterialModule } from './material.module'; // Import your Material module 
 
 @NgModule({
   declarations: [
     //HeaderHeroContentComponent,
     AppComponent,
     //BlogComponent,
-    
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule,  
-    LandingComponent  
+    LandingComponent,
+    MaterialModule 
   ],
-    
 
   providers: [
     provideAnimationsAsync()
