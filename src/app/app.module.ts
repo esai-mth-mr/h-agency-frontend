@@ -5,23 +5,29 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './components/landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialModule } from './material.module'; // Import your Material module 
 
 @NgModule({
   declarations: [
     //HeaderHeroContentComponent,
     AppComponent,
     //BlogComponent,
-    //LandingComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,  
+    LandingComponent,
+    MaterialModule 
   ],
+
   providers: [
     provideAnimationsAsync()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  //changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppModule { }
+export class AppModule { 
+
+}
