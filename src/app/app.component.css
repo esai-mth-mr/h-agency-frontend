@@ -43,22 +43,3 @@ header::before {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-.learn-more-btn, .get-started-btn {
-    border: 1px solid #fff !important;
-}
-
-.service-img{
-    filter: grayscale(100%); 
-    opacity: 0.25;
-    border: 2px solid #FFFFFF33;
-
-}
-
-button, .industry-card {
-    border: 1px solid linear-gradient(to right, #FFFFFF66 , #FFFFFF1A);
-
-}
-.special-border{
-    border: 1px solid linear-gradient(to right, #FFFFFF66 , #FFFFFF1A);
-}
