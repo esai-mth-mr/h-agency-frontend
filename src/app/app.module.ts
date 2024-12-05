@@ -1,10 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//import { CommonModule } from '@angular/common'; // Import CommonModule
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogComponent } from './blog/blog.component';
+import { BlogComponent } from './components/blog/blog.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material.module'; // Import your Material module 
@@ -19,7 +19,8 @@ import { MaterialModule } from './material.module'; // Import your Material modu
     BrowserModule, HttpClientModule,
     AppRoutingModule,  
     LandingComponent,
-    MaterialModule 
+    MaterialModule,
+    //CommonModule
   ],
 
   providers: [
