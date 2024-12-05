@@ -1,14 +1,30 @@
 <div class="flex justify-center">
     <div
         class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] px-[35px]">
-        <div class="container mx-auto p-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div *ngFor="let post of posts" class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img [src]="post.imgUrl" alt="{{ post.title }}" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-bold mb-2">{{ post.title }}</h2>
-                        <p class="text-gray-700">{{ post.content }}</p>
-                    </div>
+
+        <div class="container mx-auto mt-[70px]">
+            <div class="mb-[120px] lg:px-[100px]">
+                <div class="font-[poppins-bold] text-[36px]">Trends and Insights</div>
+                <div *ngFor="let post of posts_1; let last = last" class="mb-4 mt-[40px]">
+
+                    <app-post [post]="post"></app-post>
+                    <div *ngIf="!last" class="border-t border-[#EBF2FE33] my-8"></div>
+                </div>
+            </div>
+
+            <div class="mb-[120px] lg:px-[100px]">
+                <div class="font-[poppins-bold] text-[36px]">Industry Applications</div>
+                <div *ngFor="let post of posts_2; let last = last" class="mb-4 mt-[40px]">
+                    <app-post [post]="post"></app-post>
+                    <div *ngIf="!last" class="border-t border-[#EBF2FE33] my-8"></div>
+                </div>
+            </div>
+
+            <div class="mb-[120px] lg:px-[100px]">
+                <div class="font-[poppins-bold] text-[36px]">Tutorials</div>
+                <div *ngFor="let post of posts_3; let last = last" class="mb-4 mt-[40px]">
+                    <app-post [post]="post"></app-post>
+                    <div *ngIf="!last" class="border-t border-[#EBF2FE33] my-8"></div>
                 </div>
             </div>
         </div>
