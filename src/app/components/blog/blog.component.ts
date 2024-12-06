@@ -20,13 +20,11 @@ export class BlogComponent implements OnInit {
       console.error(error);
     })
   };
-  
   posts_1 = [
     {id:1, title: "How NVIDIA is Revolutionizing the AI Landscape in 2024", content: "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.", imgUrl: "/assets/images/blog/post1.png", created_at:"AUGust 13, 2021 ", category: "hello"},
     {id:2, title: "AI-Powered Predictive Maintenance in Manufacturing", content: "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.", imgUrl: "/assets/images/blog/post2.png", created_at:"AUGust 13, 2021 ", category: "hello"},
     {id:3, title: "AI-Powered Predictive Maintenance in Manufacturing", content: "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.", imgUrl: "/assets/images/blog/post3.png", created_at:"AUGust 13, 2021 ", category: "hello"  },
   ]
-
   posts_2 = [
     {id:4, title: "AI-Powered Predictive Maintenance in Manufacturing", content: "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.", imgUrl: "/assets/images/blog/post4.png", created_at:"AUGust 13, 2021 ", category: "hello"},
     {id:5, title: "AI-Powered Predictive Maintenance in Manufacturing", content: "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.", imgUrl: "/assets/images/blog/post5.png", created_at:"AUGust 13, 2021 ", category: "hello"},
