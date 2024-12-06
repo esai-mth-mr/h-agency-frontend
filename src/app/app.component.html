@@ -81,13 +81,28 @@
                     </div>
                 </div>
             </div>
-
+            <div *ngIf="isPostDetailPage">
+                <div class="relative bg-cover bg-center h-64"
+                    style="background-image: url('https://via.placeholder.com/800');">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center">
+                        <div class="max-w-3xl mx-auto px-4 inline-block">
+                            <div class="flex items-center space-x-2 mb-2  !inline-block ">
+                                <div class="flex border-[2px] border-white rounded-md">
+                                    <button class="bg-gray-800 text-white px-2 py-1 rounded-md">TUTORIALS</button>
+                                    <div class="text-gray-400 bg-white pt-[4px]">AUGUST 13, 2021</div>
+                                </div>
+                            </div>
+                            <h1 class="text-3xl font-bold">
+                                How NVIDIA is Revolutionizing the AI Landscape in 2024
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </header>
     <!-- <app-landing></app-landing> -->
     <router-outlet></router-outlet>
-
     <div class="get-started-sub flex justify-center mt-[50px] mb-[60px]">
         <div
             class="container flex flex-wrap items-center justify- md:justify-around pt-[55px] px-[30px] pb-[60px] md:pb-[40px] md:pt-[40px] bg-[#09090B99] items-center w-[525px] sm:w-[510px] md:w-[690px] lg:w-[930px] xl:w-[1110px] rounded-[15px] border-[1px] border-[#FFFFFF33] border-solid px-[20px] py-[30px]">
@@ -110,18 +125,20 @@
     </div>
     <footer class="bg-[#09090B99] flex justify-center">
         <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
-            <div class="footer-widget flex justify-between mt-[70px] lg:px-[80px]">
-                <div class="footer-description w-[400px]">
+            <div class="footer-widget flex justify-between mt-[70px] px-[15px] lg:px-[80px]">
+                <div class="footer-description md:w-[400px]">
                     <div class="footer-logo flex items-center gap-[10px] mb-[20px]">
                         <img src="/assets/images/footer-logo.svg">
-                        <div>Nvidia Basket</div>
+                        <div class="hidden sm:block">Nvidia Basket</div>
                     </div>
-                    <div class="footer-description-content lg:mt-[10px]">Delivering cutting-edge NVIDIA-powered AI and
+                    <div class="hidden footer-description-content lg:mt-[10px] md:block">Delivering cutting-edge
+                        NVIDIA-powered AI and
                         GPU solutions
-                        to drive innovation and empower industries worldwide.</div>
+                        to drive innovation and empower industries worldwide.
+                    </div>
                 </div>
-                <div class="footer-link flex items-center">
-                    <ul class="flex gap-[20px] text-[14px]">
+                <div class="footer-link flex items-center px-[15px]">
+                    <ul class="flex gap-[20px] lg:gap-[45px] text-[14px] ">
                         <li>About</li>
                         <li>Blogs</li>
                         <li>Support</li>
@@ -129,13 +146,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-copyright flex justify-between lg:px-[80px] my-[40px]">
-                <div>Copyright © 2025 Nvidia Basket</div>
+            <hr class="border-t border-[#736CB029] my-4">
+
+            <div class="footer-copyright flex-wrap justify-center md:flex justify-between lg:px-[80px] my-[40px]">
+                <div class=" text-[#94A3B8] text-center pb-[20px] md:pb-[0px]">Copyright © 2025 Nvidia Basket</div>
                 <div>
-                    <ul class="flex gap-[20px] text-[14px]">
-                        <li>All Rights Reserved</li>
-                        <li>Terms and Conditions</li>
-                        <li> Privacy Policy</li>
+                    <ul class="flex gap-[20px] text-[14px] justify-center px-[15px]">
+                        <li class=" text-[#94A3B8] text-center">All Rights Reserved</li>
+                        <div class="border-l border-[#94A3B8]"></div>
+                        <li class=" text-[#94A3B8] text-center">Terms and Conditions</li>
+                        <div class="border-l border-[#94A3B8]"></div>
+                        <li class=" text-[#94A3B8] text-center"> Privacy Policy</li>
                     </ul>
                 </div>
             </div>

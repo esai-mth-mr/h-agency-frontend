@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   currentUrl: string = "/";
   isBlogPage: boolean = false;
   isLandingPage: boolean = false;
+  isPostDetailPage: boolean = false;
   constructor(private http: HttpClient, private router: Router, activatedRoute:ActivatedRoute) {}
   ngOnInit() {
    // this.getForecasts();
@@ -53,7 +54,7 @@ export class AppComponent implements OnInit {
     blog: "/assets/images/header/blog.png",
     resource: "/assets/images/header/resource.png",
     service: "/assets/images/header/service.png",
-    pricing: "/assets/images/header/pricing"
+    pricing: "/assets/images/header/pricing",
   };
   currentImgUrl: string = this.headerImgUrl['landing'];
   changeBackground(item: string): void {
@@ -63,11 +64,25 @@ export class AppComponent implements OnInit {
 
   updateContentBasedOnUrl(): void {
     //header content
+    if(this.currentUrl.includes('blog')) {
+            
+      if(this.currentUrl.includes('post')) {
+      
+        this.changeBackground('post'); 
+      } else {
+             this.changeBackground("blog");
+      }
+    }
+    if(this.currentUrl.includes('landing')) { 
+      this.changeBackground('landing');
+    }
     this.isBlogPage = this.currentUrl.includes('blog');
+    if(this.currentUrl.includes('post')) {
+      this.isBlogPage = false;
+    }
     this.isLandingPage = this.currentUrl.includes('landing');
-    //header background
-    console.log(this.currentUrl.split('/')[1]);
-    this.changeBackground(this.currentUrl.split('/')[1]);
+    this.isPostDetailPage = this.currentUrl.includes('post');
+
   }
   
 

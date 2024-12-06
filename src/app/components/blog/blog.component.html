@@ -6,7 +6,6 @@
             <div class="mb-[120px] lg:px-[100px]">
                 <div class="font-[poppins-bold] text-[36px]">Trends and Insights</div>
                 <div *ngFor="let post of posts_1; let last = last" class="mb-4 mt-[40px]">
-
                     <app-post [post]="post"></app-post>
                     <div *ngIf="!last" class="border-t border-[#EBF2FE33] my-8"></div>
                 </div>

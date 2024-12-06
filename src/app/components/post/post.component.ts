@@ -1,6 +1,6 @@
 // import { Component } from '@angular/core';
 import { Component, Input } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-post',
   standalone: true,
@@ -9,5 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './post.component.css'
 })
 export class PostComponent {
+  constructor(private router: Router) {};
   @Input() post: any;
+  viewPost() {
+    this.router.navigate(['/blog/post', this.post.id]);
+  }
 }
