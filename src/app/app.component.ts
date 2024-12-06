@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   isPostDetailPage: boolean = false;
   constructor(private http: HttpClient, private router: Router, activatedRoute:ActivatedRoute) {}
   ngOnInit() {
-   // this.getForecasts();
+   this.getForecasts();
    this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
@@ -37,16 +37,18 @@ export class AppComponent implements OnInit {
          // This should now log the correct URL
       });
   }
-  // getForecasts() {
-  //   this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-  //     (result) => {
-  //       this.forecasts = result;
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+  getForecasts() {
+    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
+      (result) => {
+        this.forecasts = result;
+        console.log(result);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    
+  }
   title = 'demo.client';
   //header background should be changed based on the page.
   headerImgUrl: {[key:string]: string} = {
@@ -63,6 +65,8 @@ export class AppComponent implements OnInit {
   };
 
   updateContentBasedOnUrl(): void {
+
+
     //header content
     if(this.currentUrl.includes('blog')) {
             
