@@ -17,8 +17,7 @@ export class BlogComponent implements OnInit {
     this.http.get<any>('/blogPosts').subscribe((result) => {
       console.log(result);
     }, (error) => {
-      console.error(error)
-      console.log("error");
+      console.error(error);
     })
   };
   
