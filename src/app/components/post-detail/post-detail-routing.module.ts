@@ -9,3 +9,4 @@ const routes: Routes = [{ path: '', component: PostDetailComponent }];
   exports: [RouterModule]
 })
 export class PostDetailRoutingModule { }
+  
