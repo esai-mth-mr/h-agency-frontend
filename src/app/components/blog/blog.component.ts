@@ -27,23 +27,23 @@ export class BlogComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
   ngOnInit() {
-    this.http.get<any>('/blogPosts').subscribe((result) => {
-      console.log(result);
-      // Group posts by category
-    this.categorizedPosts = this.posts.reduce((acc, post) => {
-      if (!acc[post.category]) {
-        acc[post.category] = [];
-      }
-      acc[post.category].push(post);
-      return acc;
-    }, {} as { [key: string]: Post[] });
+    // this.http.get<any[]>('/blogPosts').subscribe((result) => {
+    //   console.log(result);
+    //   // Group posts by category
+    // this.categorizedPosts = result.reduce<{ [key: string]: Post[] }>((acc, post) => {
+    //   if (!acc[post.category]) {
+    //     acc[post.category] = [];
+    //   }
+    //   acc[post.category].push(post);
+    //   return acc;
+    // }, { });
 
-    // Get unique categories
-    this.categories = Object.keys(this.categorizedPosts);
-    console.log(this.categorizedPosts);
-    }, (error) => {
-      console.error(error);
-    });
+    // // Get unique categories
+    // this.categories = Object.keys(this.categorizedPosts);
+    // console.log(this.categorizedPosts);
+    // }, (error) => {
+    //   console.error(error);
+    // });
     
   };
   posts_1 = [
