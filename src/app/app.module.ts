@@ -21,6 +21,7 @@ import { MaterialModule } from './material.module'; // Import your Material modu
     LandingComponent,
     MaterialModule,
     //CommonModule
+    BlogComponent
   ],
 
   providers: [

@@ -1,9 +1,16 @@
-<div class="text-white rounded-lg flex flex-col md:flex-row items-start">
-    <div class="flex-1 text-start md:text-left" (click)="viewPost()">
-        <span class="bg-green-500 text-xs uppercase font-bold px-2 py-1 rounded-full">{{ post.category }}</span>
-        <span class="text-gray-400 ml-2">{{ post.created_at }}</span>
-        <h2 class="text-2xl font-bold mt-2">{{ post.title }}</h2>
-        <p class="text-gray-300 mt-1">{{ post.content }}</p>
+<div class="text-white rounded-lg flex flex-col md:flex-row items-start post py-[15px] px-[30px]">
+    <div class="flex-1 text-start md:text-left pr-[30px]" (click)="viewPost()">
+        <div>
+            <span class="bg-[#76B900] text-xs uppercase font-bold px-2 py-1 rounded-[5px]">{{ post.category }}</span>
+            <span class="text-gray-400 ml-2">{{ post.created_at }}</span>
+        </div>
+        <h2 class="text-[20px] md:text-2xl font-bold mt-2">{{ post.title }}</h2>
+        <p class="text-[14px] md:text-[16px] text-gray-300 mt-1">{{ post.content }}</p>
     </div>
-    <img [src]="post.imgUrl" alt="Post Image" class="w-[300px] h-[210px] rounded-lg mt-4 md:mt-0 md:ml-4">
+    <div class="relative">
+        <img [src]="post.imgUrl" alt="Post Image" class="w-[300px] h-[210px] rounded-lg mt-4 md:mt-0 md:ml-4">
+        <div
+            class="absolute inset-0 bg-gradient-to-tr from-[#1E252D] to-[#E4FFB5] opacity-50 mix-blend-overlay mt-4 md:mt-0 md:ml-4">
+        </div>
+    </div>
 </div>

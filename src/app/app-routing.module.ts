@@ -12,7 +12,6 @@ const routes: Routes = [
   },  
   {path: 'blog/post/:id', component: PostDetailComponent},
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

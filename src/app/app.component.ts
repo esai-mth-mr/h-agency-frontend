@@ -5,6 +5,7 @@ import { filter } from 'rxjs/operators';
 //Angular Material
 import {MatExpansionModule} from '@angular/material/expansion';
 import {ChangeDetectionStrategy, signal} from '@angular/core';
+import { BackgroundService } from './shared/background.service';
 interface WeatherForecast {
   date: string;
   temperatureC: number;
@@ -20,19 +21,30 @@ interface WeatherForecast {
   //declarations: [MatExpansionModule]
 })
 export class AppComponent implements OnInit {
+  
+  headerBackgroundStyle: { [key: string]: string } = {};
+
   public forecasts: WeatherForecast[] = [];
   currentUrl: string = "/";
   isBlogPage: boolean = false;
   isLandingPage: boolean = false;
   isPostDetailPage: boolean = false;
-  constructor(private http: HttpClient, private router: Router, activatedRoute:ActivatedRoute) {}
-  ngOnInit() {
-   this.getForecasts();
+  constructor(private http: HttpClient, private router: Router, activatedRoute:ActivatedRoute, private backgroundService:BackgroundService ) {}
+  ngOnInit() {    
+   //this.getForecasts();
+  // Subscribe to the background URL changes
+   // Subscribe to the background URL changes
+   this.backgroundService.headerBackgroundUrl$.subscribe((url) => {
+    console.log("headerimaggeurl");
+    console.log(url);
+    this.currentImgUrl = url;
+  });
+
+  
    this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.currentUrl = event.url;
-        console.log(this.currentUrl);
         this.updateContentBasedOnUrl();
          // This should now log the correct URL
       });
@@ -41,7 +53,6 @@ export class AppComponent implements OnInit {
     this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
       (result) => {
         this.forecasts = result;
-        console.log(result);
       },
       (error) => {
         console.error(error);
@@ -60,7 +71,6 @@ export class AppComponent implements OnInit {
   };
   currentImgUrl: string = this.headerImgUrl['landing'];
   changeBackground(item: string): void {
-    console.log(item)
     this.currentImgUrl = this.headerImgUrl[item];
   };
 
