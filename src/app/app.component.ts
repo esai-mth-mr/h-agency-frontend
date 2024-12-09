@@ -29,7 +29,11 @@ export class AppComponent implements OnInit {
   isBlogPage: boolean = false;
   isLandingPage: boolean = false;
   isPostDetailPage: boolean = false;
-  constructor(private http: HttpClient, private router: Router, activatedRoute:ActivatedRoute, private backgroundService:BackgroundService ) {}
+  constructor(
+    private http: HttpClient, 
+    private router: Router, 
+    activatedRoute:ActivatedRoute, 
+    private backgroundService:BackgroundService ) {}
   ngOnInit() {    
    //this.getForecasts();
   // Subscribe to the background URL changes
@@ -80,11 +84,10 @@ export class AppComponent implements OnInit {
     //header content
     if(this.currentUrl.includes('blog')) {
             
-      if(this.currentUrl.includes('post')) {
-      
+      if(this.currentUrl.split('/')[2]) {
         this.changeBackground('post'); 
       } else {
-             this.changeBackground("blog");
+        this.changeBackground("blog");
       }
     }
     if(this.currentUrl.includes('landing')) { 
@@ -94,9 +97,6 @@ export class AppComponent implements OnInit {
     if(this.currentUrl.includes('post')) {
       this.isBlogPage = false;
     }
-    this.isLandingPage = this.currentUrl.includes('landing');
-    this.isPostDetailPage = this.currentUrl.includes('post');
-
   }
   
 
