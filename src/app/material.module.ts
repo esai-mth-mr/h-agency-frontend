@@ -9,7 +9,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatButtonModule,  
     MatInputModule,
     MatExpansionModule
-    // Add other Angular Material modules as needed  
+    // Add other Angular Material modules as needed   
   ],
-})  
+})
 export class MaterialModule {}  

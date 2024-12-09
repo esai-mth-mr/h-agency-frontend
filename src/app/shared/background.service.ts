@@ -5,12 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class BackgroundService {
-  private headerBackgroundUrl = new BehaviorSubject<string>('');
-  headerBackgroundUrl$ = this.headerBackgroundUrl.asObservable();
+  private postDetailHeaderInfo = new BehaviorSubject<any>({});
+  postDetailHeaderInfo$ = this.postDetailHeaderInfo.asObservable();
 
-  // Method to update the background image URL
-  setBackground(url: string): void {
-    this.headerBackgroundUrl.next(url);
+  // Method to update the shared object
+  updatePostDetailHeaderInfo(data: any) {
+    this.postDetailHeaderInfo.next(data);
   }
 
   constructor() { }

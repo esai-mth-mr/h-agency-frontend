@@ -6,7 +6,6 @@
             href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more
         details.</em></p> -->
 
-
 <main class="main bg-[#131517]">
     <header class="flex justify-center ">
         <div [ngStyle]="{'background-image': 'url(' + currentImgUrl + ')'}" class="header-background"></div>
@@ -100,14 +99,16 @@
                         <div
                             class="text-[16px] text-center lg:text-start text-color-gradient-1 font-[poppins-bold] md:text-[20px]">
                             <div class="flex border-[2px] border-white rounded-md !inline-flex">
-                                <button class="bg-[#131517] text-white px-2 py-1 rounded-md">TUTORIALS</button>
-                                <div class="text-gray-400 bg-white pt-[4px] px-[5px] text-[#232E52]">AUGUST 13, 2021
+                                <button
+                                    class="bg-[#131517] text-white px-2 py-1 rounded-md">{{headerInfo.category}}</button>
+                                <div class="text-gray-400 bg-white pt-[4px] px-[5px] text-[#232E52]">
+                                    {{headerInfo.created_at | date:'dd.MM.yyyy'}}
                                 </div>
                             </div>
                         </div>
                         <div
                             class="text-[24px] sm:text-[32px] lg:text-[50px] lg:leading-[60px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
-                            How NVIDIA is Revolutionizing the AI Landscape in 2024</div>
+                            {{headerInfo.title}}</div>
                     </div>
                 </div>
 
