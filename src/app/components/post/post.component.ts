@@ -12,6 +12,7 @@ export class PostComponent {
   constructor(private router: Router) {};
   @Input() post: any;
   ngOnInit() {
+    
   }
   viewPost() {
     this.router.navigate(['/blog', this.post.id]);
