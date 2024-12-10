@@ -15,6 +15,8 @@ export class PostComponent {
     
   }
   viewPost() {
+    console.log("viewpost");
+    console.log(this.post.user_id);
     this.router.navigate(['/blog', this.post.user_id]);
   }
 }

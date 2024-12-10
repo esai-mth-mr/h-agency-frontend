@@ -6,11 +6,9 @@ import { filter } from 'rxjs/operators';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {ChangeDetectionStrategy, signal} from '@angular/core';
 import { BackgroundService } from './shared/background.service';
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface HeaderInfo {
+  status: string;
+  result: Array<{status: string, id: number, title: string, content: string, category: string, user_id: string, created_at: Date, updated_at: Date, primary_img_url: string, secondary_img_url: string}>;
 }
 
 @Component({
@@ -24,12 +22,19 @@ export class AppComponent implements OnInit {
   
   headerBackgroundStyle: { [key: string]: string } = {};
 
-  public forecasts: WeatherForecast[] = [];
   headerInfo: any;
   currentUrl: string = "/";
   isBlogPage: boolean = false;
   isLandingPage: boolean = false;
   isPostDetailPage: boolean = false;
+  isPrevBtn: boolean = false;
+  isNextBtn: boolean = false;
+
+  
+  arrowPost(direction: string) {
+    this.backgroundService.updateArrowDirection(direction);
+  };
+
   constructor(
     private http: HttpClient, 
     private router: Router, 
@@ -39,11 +44,16 @@ export class AppComponent implements OnInit {
    //this.getForecasts();
   // Subscribe to the background URL changes
    // Subscribe to the background URL changes
-   this.backgroundService.postDetailHeaderInfo$.subscribe((HeaderInfo) => {
-    console.log("headerimaggeurl");
-    this.headerInfo = HeaderInfo;
-    console.log(this.headerInfo);
-    this.currentImgUrl = this.headerInfo.primary_img_url;
+   this.backgroundService.postDetailHeaderInfo$.subscribe((HeaderInfo:HeaderInfo) => {
+     this.headerInfo = HeaderInfo;
+     this.isPrevBtn = HeaderInfo.status == "previous" ? false : true;
+     this.isNextBtn = HeaderInfo.status == "next" ? false : true;
+    if(HeaderInfo.status == "previous" && HeaderInfo.result?.length > 0)
+      {
+        this.headerInfo = HeaderInfo.result[0];
+      }
+    else if(HeaderInfo?.result?.length > 1) this.headerInfo = HeaderInfo.result[1];
+    this.currentImgUrl = this.headerInfo?.primary_img_url || "";
   });
 
   
@@ -55,17 +65,7 @@ export class AppComponent implements OnInit {
          // This should now log the correct URL
       });
   }
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-    
-  }
+  
   title = 'demo.client';
   //header background should be changed based on the page.
   headerImgUrl: {[key:string]: string} = {
@@ -91,18 +91,22 @@ export class AppComponent implements OnInit {
         const hasPostId = !!this.currentUrl.split('/')[2]; // Check if there's a post ID  
 
         if (hasPostId) {  
-            console.log("post");  
             this.changeBackground('post');   
             this.isPostDetailPage = true;  
         } else {  
             this.changeBackground("blog");  
             this.isBlogPage = true;  
-        }  
+        }
     }   
     // Check for 'landing' in the URL  
     else if (this.currentUrl.includes('landing')) {   
         this.changeBackground('landing');  
         this.isLandingPage = true;  
     }  
+    if(this.currentUrl.includes('contactus')) {
+      this.isLandingPage = false; 
+      this.isBlogPage = false;
+      this.isPostDetailPage = false;
+    }
 }  
 }

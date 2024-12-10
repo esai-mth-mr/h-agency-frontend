@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
   constructor(private http: HttpClient) {}
   ngOnInit() {
     
-    this.http.get<any[]>('/blogPosts').subscribe((result) => {
+    this.http.get<any[]>('/api/blogPosts').subscribe((result) => {
       console.log(result);
       // Group posts by category
     this.categorizedPosts = result.reduce<{ [key: string]: Post[] }>((acc, post) => {

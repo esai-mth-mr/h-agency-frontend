@@ -1,0 +1,31 @@
+<div class="flex justify-center">
+    <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
+        <div class="message lg:mt-[100px] mt-[50px] px-[15px]">
+            <div class="message-title flex justify-center lg:justify-start">
+                <div class="text-center lg:text-start">
+                    <div class="text-[20px] md:text-[24px] lg:text-[20px] text-color-gradient-1 font-[poppins-bold]">
+                        Get Started</div>
+                    <div
+                        class="text-color-gradient text-[24px] md:text-[32px] lg:text-[44px] lg:w-[50%] font-[poppins-medium] lg:leading-[52px]">
+                        Get in touch
+                        with us.
+                        We're here to assist you.</div>
+                </div>
+            </div>
+            <div class="message-area flex">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                        <mat-error>Please enter a valid email address</mat-error>
+                        }
+                        @if (emailFormControl.hasError('required')) {
+                        <mat-error>Email is <strong>required</strong></mat-error>
+                        }
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

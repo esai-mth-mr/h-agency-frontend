@@ -5,7 +5,6 @@
 <p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a
             href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more
         details.</em></p> -->
-
 <main class="main bg-[#131517]">
     <header class="flex justify-center ">
         <div [ngStyle]="{'background-image': 'url(' + currentImgUrl + ')'}" class="header-background"></div>
@@ -18,22 +17,24 @@
                 </div>
                 <div class="">
                     <ul
-                        class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[80px] lg:text-[16px] font-[poppins-light]">
+                        class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[50px] lg:text-[16px] font-[poppins-light]">
                         <li (click)="changeBackground('solution')" class="navbar relative flex justify-center"><a
                                 [routerLink]="['/solution']">Solution</a></li>
-                        <li (click)="changeBackground('resource')" class="navbar relative"><a
-                                [routerLink]="['/resource']">Resources</a></li>
+                        <li (click)="changeBackground('service')" class="navbar relative"><a
+                                [routerLink]="['/service']">Service</a></li>
+                        <li (click)="changeBackground('aboutus')" class="navbar relative"><a
+                                [routerLink]="['/aboutus']">About Us</a></li>
                         <li (click)="changeBackground('blog')" class="navbar relative"><a
                                 [routerLink]="['/blog']">Blog</a></li>
-                        <li (click)="changeBackground('pricing')" class="navbar relative"><a
-                                [routerLink]="['/landing']">Pricing</a></li>
+                        <li (click)="changeBackground('landing')" class="navbar relative"><a
+                                [routerLink]="['/landing']">Home</a></li>
                     </ul>
                     <div></div>
                 </div>
                 <div class="sign-btn">
-                    <button
-                        class="bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[13px] px-[22px] py-[10px] lg:text-[16px] lg:h-[40px] font-[poppins]">Join
-                        Now
+                    <button (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
+                        class="bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[13px] px-[20px] pt-[8px] pb-[10px] lg:text-[16px] lg:h-[40px] font-[poppins]">Contact
+                        Us
                     </button>
                 </div>
             </div>
@@ -93,9 +94,18 @@
                 </div>
             </div>
             <div *ngIf="isPostDetailPage">
-                <div class="px-[35px]">
+                <div class="min-[440px]:px-[35px] flex">
+                    <div class="flex justify-center mt-[50px] lg:mt-[160px]">
+                        <button *ngIf="isPrevBtn" (click)="arrowPost('previous')"
+                            class="previous_post flex items-center justify-center w-[30px] h-[30px] md:w-[38px] md:h-[38px] bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    </div>
                     <div
-                        class=" pt-[50px] pb-[40px] lg:pt-[160px]  lg:flex lg:justify-between lg:flex-col lg:mb-[160px] lg:px-[100px]">
+                        class=" pt-[50px] pb-[40px] lg:pt-[160px]  lg:flex lg:justify-between lg:flex-col lg:mb-[160px] lg:mx-[20px] lg:px-[70px]">
                         <div
                             class="text-[16px] text-center lg:text-start text-color-gradient-1 font-[poppins-bold] md:text-[20px]">
                             <div class="flex border-[2px] border-white rounded-md !inline-flex">
@@ -109,6 +119,15 @@
                         <div
                             class="text-[24px] sm:text-[32px] lg:text-[50px] lg:leading-[60px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
                             {{headerInfo.title}}</div>
+                    </div>
+                    <div class="flex justify-center mt-[50px] lg:mt-[160px]">
+                        <button *ngIf="isNextBtn" (click)="arrowPost('next')"
+                            class="next_post flex items-center justify-center w-[30px] h-[30px] md:w-[38px] md:h-[38px] bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
