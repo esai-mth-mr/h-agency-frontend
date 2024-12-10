@@ -98,3 +98,9 @@ a:hover{
 * {
     box-sizing: border-box;
 }
+
+.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled {
+    background-color: #131517; /* Replace with your desired color */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    padding: 4px; /* Optional: Add padding inside the field */
+}

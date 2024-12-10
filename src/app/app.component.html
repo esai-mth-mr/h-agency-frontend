@@ -1,10 +1,3 @@
-<!-- <h1 id="tableLabel">Weather forecast</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
-
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a
-            href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more
-        details.</em></p> -->
 <main class="main bg-[#131517]">
     <header class="flex justify-center ">
         <div [ngStyle]="{'background-image': 'url(' + currentImgUrl + ')'}" class="header-background"></div>
@@ -18,16 +11,21 @@
                 <div class="">
                     <ul
                         class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[50px] lg:text-[16px] font-[poppins-light]">
-                        <li (click)="changeBackground('solution')" class="navbar relative flex justify-center"><a
-                                [routerLink]="['/solution']">Solution</a></li>
-                        <li (click)="changeBackground('service')" class="navbar relative"><a
-                                [routerLink]="['/service']">Service</a></li>
-                        <li (click)="changeBackground('aboutus')" class="navbar relative"><a
-                                [routerLink]="['/aboutus']">About Us</a></li>
-                        <li (click)="changeBackground('blog')" class="navbar relative"><a
-                                [routerLink]="['/blog']">Blog</a></li>
-                        <li (click)="changeBackground('landing')" class="navbar relative"><a
-                                [routerLink]="['/landing']">Home</a></li>
+                        <li (click)="changeBackground('solution')" class="navbar relative flex justify-center">
+                            <a [routerLink]="['/solution']">Solution</a>
+                        </li>
+                        <li (click)="changeBackground('service')" class="navbar relative">
+                            <a [routerLink]="['/service']">Service</a>
+                        </li>
+                        <li (click)="changeBackground('aboutus')" class="navbar relative">
+                            <a [routerLink]="['/aboutus']">About Us</a>
+                        </li>
+                        <li (click)="changeBackground('blog')" class="navbar relative">
+                            <a [routerLink]="['/blog']">Blog</a>
+                        </li>
+                        <li (click)="changeBackground('landing')" class="navbar relative">
+                            <a [routerLink]="['/landing']">Home</a>
+                        </li>
                     </ul>
                     <div></div>
                 </div>

@@ -6,4 +6,31 @@
   
   .example-full-width {
     width: 100%;
+
   }
+.input{
+  font-size: 16px;
+  color: white; 
+}
+.example-full-width .mat-mdc-input-element {
+  color: white; /* Set text color to white */
+  font-size: 18px;
+}
+.example-full-width .mat-mdc-floating-label {
+  font-size: 18px;
+}
+
+.text-caption::after{
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #E7FFBC, #76B900);
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  /* transform: translateX(-50%); */
+  
+}

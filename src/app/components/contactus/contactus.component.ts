@@ -5,10 +5,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-contactus',
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule],
+  imports: [FormsModule, MatFormFieldModule, MatInputModule],
   templateUrl: './contactus.component.html',
   styleUrl: './contactus.component.css'
 })
 export class ContactusComponent {
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 }
