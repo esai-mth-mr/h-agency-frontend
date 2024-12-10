@@ -1,0 +1,17 @@
+<div class="flex justify-center">
+    <div
+        class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] px-[35px]">
+
+        <div class="container mx-auto mt-[70px]">
+            <div *ngFor="let category of categories">
+                <div class="mb-[120px] lg:px-[100px]">
+                    <div class="font-[poppins-bold] text-[36px]">{{category}}</div>
+                    <div *ngFor="let post of categorizedPosts[category]; let last = last" class="mb-4 mt-[40px]">
+                        <app-post [post]="post"></app-post>
+                        <div *ngIf="!last" class="border-t border-[#EBF2FE33] my-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
