@@ -12,8 +12,6 @@ th, td {
 table {
     margin: 0 auto;
 }
-
-
 /* 
 header::before{
     position: absolute;
@@ -30,8 +28,7 @@ header{
     /* width: 100%; */
     z-index: 1;
 }
-header::before {
-    content: "";
+.header-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,7 +36,8 @@ header::before {
     bottom: 0;
     opacity: 0.3;
     z-index: -1;
-    background-image: url('/assets/images/bg.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+

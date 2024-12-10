@@ -1,1 +1,2 @@
 C:\Users\BEAST\source\repos\Demo\demo.client\obj\Debug\demo.client.esproj.CoreCompileInputs.cache
+E:\self-study\demo.client\obj\Debug\demo.client.esproj.CoreCompileInputs.cache
