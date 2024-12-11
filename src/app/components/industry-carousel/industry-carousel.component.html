@@ -1,0 +1,46 @@
+<div class="carousel-container mt-[150px]">
+    <div class="flex justify-between items-center">
+        <div class="mb-[40px]">
+            <div class=" section-title text-color-gradient-1 text-[15px] md:text-[18px] font-[poppins-bold] text-start">
+                Industries
+            </div>
+            <div
+                class="carousel-title mb-[30px] lg:mb-[0px] text-color-gradient font-[poppins-bold] sm:text-[30px] text-[24px] lg:text-[40px]">
+                Transforming Industries
+            </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <div class="carousel-nav">
+            <button mat-icon-button class="!rounded-[5px] !w-[75px] !h-[75px] mr-[20px]" (click)="prevSlide()"
+                [disabled]="currentIndex === 0">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            <button mat-icon-button class="!rounded-[5px] !w-[75px] !h-[75px] border-2 border-white"
+                (click)="nextSlide()" [disabled]="currentIndex >= maxIndex">
+                <mat-icon>chevron_right</mat-icon>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel Wrapper -->
+    <div class="carousel-wrapper">
+        <div class="carousel-track" [style.transform]="'translateX(' + currentTranslate + '%)'">
+            <!-- Carousel Items -->
+            <div *ngFor="let item of carouselItems" class="carousel-item">
+                <mat-card class="card" [ngStyle]="{ 
+                    'background': 'linear-gradient(rgba(0,0, 0,0.5), rgba(0,0,0,0.5)), url(' + item.image + ')'
+                  }"> <mat-card-content class="card-content flex justify-center flex-wrap !px-[30px]">
+                        <div class="w-full flex justify-center"><img [src]="item.icon"></div>
+                        <h3
+                            class="mt-[17px] w-full card-title text-center text-[30px] font-[poppins-bold] text-color-gradient">
+                            {{ item.title }}
+                        </h3>
+                        <p class="mt-[10px] w-full card-description text-center text-[#FFFFFFB2] text-[18px]">{{
+                            item.description }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+
+</div>
