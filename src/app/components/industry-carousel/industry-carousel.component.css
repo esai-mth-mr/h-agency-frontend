@@ -63,5 +63,7 @@
   }
 
 .mat-mdc-icon-button {
-    border: 1px solid red;
+    /* //border: 1px solid ; */
+    background-color: #38383833;
+    border: 1px solid #FFFFFF33;
   }

@@ -1,23 +1,55 @@
-<div class="carousel-container mt-[150px]">
-    <div class="flex justify-between items-center">
-        <div class="mb-[40px]">
-            <div class=" section-title text-color-gradient-1 text-[15px] md:text-[18px] font-[poppins-bold] text-start">
+<div class="carousel-container mt-[150px] px-[15px]">
+    <div class="sm:flex justify-between items-center px-[15px]  mb-[20px] sm:mb-0">
+        <div class="mt-[20px]">
+            <div
+                class=" section-title text-color-gradient-1 text-[15px] md:text-[18px] font-[poppins-bold] text-center sm:text-start">
                 Industries
             </div>
             <div
-                class="carousel-title mb-[30px] lg:mb-[0px] text-color-gradient font-[poppins-bold] sm:text-[30px] text-[24px] lg:text-[40px]">
+                class="carousel-title mb-[30px] lg:mb-[40px] text-color-gradient font-[poppins-bold] sm:text-[30px] text-[24px] lg:text-[40px]">
                 Transforming Industries
             </div>
         </div>
         <!-- Navigation Buttons -->
         <div class="carousel-nav">
-            <button mat-icon-button class="!rounded-[5px] !w-[75px] !h-[75px] mr-[20px]" (click)="prevSlide()"
-                [disabled]="currentIndex === 0">
-                <mat-icon>chevron_left</mat-icon>
+            <button class="relative" mat-icon-button class="!rounded-[5px] !w-[65px] !h-[65px] mr-[20px]"
+                (click)="prevSlide()" [disabled]="currentIndex === 0" [ngClass]="{'opacity-50': currentIndex === 0}">
+                <div class="flex justify-center items-center">
+                    <svg class="rotate-180" width="39" height="39" viewBox="0 0 39 39" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 19.5H37M37 19.5L19.5 2M37 19.5L19.5 37" stroke="url(#paint0_linear_453_426)"
+                            stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="paint0_linear_453_426" x1="2" y1="19.5" x2="37" y2="19.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#A6A6A6" />
+                                <stop offset="0.501532" stop-color="white" />
+                                <stop offset="1" stop-color="#A3A3A3" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
             </button>
-            <button mat-icon-button class="!rounded-[5px] !w-[75px] !h-[75px] border-2 border-white"
-                (click)="nextSlide()" [disabled]="currentIndex >= maxIndex">
-                <mat-icon>chevron_right</mat-icon>
+            <button class="relative flex justify-center items-center" mat-icon-button
+                class="!rounded-[5px] !w-[65px] !h-[65px] border-2 border-white" (click)="nextSlide()"
+                [disabled]="currentIndex >= maxIndex" [ngClass]="{'opacity-50': currentIndex >= maxIndex}">
+                <div class="flex justify-center items-center">
+                    <svg class="" width="39" height="39" viewBox="0 0 39 39" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 19.5H37M37 19.5L19.5 2M37 19.5L19.5 37" stroke="url(#paint0_linear_453_426)"
+                            stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="paint0_linear_453_426" x1="2" y1="19.5" x2="37" y2="19.5"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#A6A6A6" />
+                                <stop offset="0.501532" stop-color="white" />
+                                <stop offset="1" stop-color="#A3A3A3" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
             </button>
         </div>
     </div>
@@ -30,10 +62,10 @@
                     'background': 'linear-gradient(rgba(0,0, 0,0.5), rgba(0,0,0,0.5)), url(' + item.image + ')'
                   }"> <mat-card-content class="card-content flex justify-center flex-wrap !px-[30px]">
                         <div class="w-full flex justify-center"><img [src]="item.icon"></div>
-                        <h3
-                            class="mt-[17px] w-full card-title text-center text-[30px] font-[poppins-bold] text-color-gradient">
+                        <div
+                            class="mt-[17px] w-full card-title text-center text-[24px] md:text-[30px] font-[poppins-bold] text-color-gradient">
                             {{ item.title }}
-                        </h3>
+                        </div>
                         <p class="mt-[10px] w-full card-description text-center text-[#FFFFFFB2] text-[18px]">{{
                             item.description }}</p>
                     </mat-card-content>

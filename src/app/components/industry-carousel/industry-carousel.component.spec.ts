@@ -19,5 +19,5 @@ describe('IndustryCarouselComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); 
 });
