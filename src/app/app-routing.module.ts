@@ -13,7 +13,7 @@ const routes: Routes = [
    { path: 'blog/create', component: PostCreateComponent }, // More specific route first
    { path: 'blog/:id', component: PostDetailComponent },    // Dynamic route second
   { path: 'blog', component: BlogComponent },             // General route last
-  { path: 'landing', component: LandingComponent },
+  { path: '', component: LandingComponent },
   {path: 'contactus', component: ContactusComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'service', component: ServiceComponent},

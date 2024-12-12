@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   isNextBtn: boolean = false;
   isAboutPage: boolean = false;
   isServicePage: boolean = false;
-  
+  isContactUsPage: boolean = false;
   arrowPost(direction: string) {
     this.backgroundService.updateArrowDirection(direction);
   };
@@ -81,8 +81,10 @@ export class HeaderComponent implements OnInit {
   changeBackground(item: string): void {
     this.currentImgUrl = this.headerImgUrl[item];
   };
+
+  //when you click contactuspage button
   navigateToUrl(url:string):void {
-    this.isLandingPage = false;  
+    this.isContactUsPage = false;  
     this.router.navigate([url]);
   }
   updateContentBasedOnUrl(): void {  
@@ -92,6 +94,7 @@ export class HeaderComponent implements OnInit {
     this.isLandingPage = false;  
     this.isAboutPage = false;
     this.isServicePage = false;
+    this.isContactUsPage = false;
     // Check for 'blog' in the URL  
     if (this.currentUrl.includes('blog')) {  
         const hasPostId = !!this.currentUrl.split('/')[2]; // Check if there's a post ID  
@@ -105,7 +108,8 @@ export class HeaderComponent implements OnInit {
         }
     }   
     // Check for 'landing' in the URL  
-    else if (this.currentUrl.includes('landing')) {   
+    else if (this.currentUrl.split('/')[1] === "") {   
+      console.log(this.currentUrl.split('/')[1])
         this.changeBackground('landing');  
         this.isLandingPage = true;  
     }  
@@ -121,6 +125,9 @@ export class HeaderComponent implements OnInit {
     if(this.currentUrl.includes('service')) {
       this.changeBackground('service');
       this.isServicePage = true;
+    }
+    if(this.currentUrl.includes('contactus')) {
+      this.isContactUsPage = true;
     }
 
     console.log(this.currentImgUrl)

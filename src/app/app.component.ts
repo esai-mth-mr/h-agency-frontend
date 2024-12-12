@@ -1,5 +1,6 @@
 import { Component, OnInit,Renderer2, ElementRef } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,6 +11,10 @@ import { HeaderComponent } from './components/header/header.component';
   //declarations: [MatExpansionModule]
 })
 export class AppComponent {
-  
+
+  constructor(private router:Router){};
+  navigateToUrl(url:string):void {
+    this.router.navigate([url]);
+  }
    
 }

@@ -1,43 +1,45 @@
 <header class="flex justify-center ">
-    <div [ngStyle]="{'background-image': 'linear-gradient(to right, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.8)), url(' + currentImgUrl + ')'}"
+    <div [ngStyle]="{'background-image': !isContactUsPage ? 'linear-gradient(to right, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.8)), url(' + currentImgUrl + ')':''}"
         class="header-background"></div>
     <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
-        <div class="px-[15px]  flex justify-between items-center py-[20px] z-1">
-            <div class="company-logo flex items-center gap-[10px]">
-                <div><img src="/assets/images/logo.svg" alt="no logo file"></div>
-                <div class="font-[poppins-medium] text-[14px] lg:text-[16px] text-color-gradient">Nvidia Basket
+        <div class="header-nav">
+            <div class="px-[15px] border-b border-[#FFFFFF1A] mt-4  flex justify-between items-center py-[10px] z-1">
+                <div class="company-logo flex items-center gap-[10px]">
+                    <div><img src="/assets/images/logo.svg" alt="no logo file"></div>
+                    <div class="font-[poppins-medium] text-[14px] lg:text-[16px] text-color-gradient">Nvidia Basket
+                    </div>
                 </div>
-            </div>
-            <div class="">
-                <ul
-                    class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[50px] lg:text-[16px] font-[poppins-light]">
-                    <li (click)="changeBackground('solution')" class="navbar relative flex justify-center">
-                        <a [routerLink]="['/solution']">Solution</a>
-                    </li>
-                    <li (click)="changeBackground('service')" class="navbar relative">
-                        <a [routerLink]="['/service']">Service</a>
-                    </li>
-                    <li (click)="changeBackground('aboutus')" class="navbar relative">
-                        <a [routerLink]="['/aboutus']">About Us</a>
-                    </li>
-                    <li (click)="changeBackground('blog')" class="navbar relative">
-                        <a [routerLink]="['/blog']">Blog</a>
-                    </li>
-                    <li (click)="changeBackground('landing')" class="navbar relative">
-                        <a [routerLink]="['/landing']">Home</a>
-                    </li>
-                </ul>
-                <div></div>
-            </div>
-            <div class="sign-btn">
-                <button (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
-                    class="bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[13px] px-[20px] pt-[8px] pb-[10px] lg:text-[16px] lg:h-[40px] font-[poppins]">Contact
-                    Us
-                </button>
+                <div class="">
+                    <ul
+                        class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[50px] lg:text-[16px] font-[poppins-light]">
+                        <li (click)="changeBackground('landing')" class="navbar relative flex justify-center">
+                            <a [routerLink]="['/']">Solution</a>
+                        </li>
+                        <li (click)="changeBackground('service')" class="navbar relative">
+                            <a [routerLink]="['/service']">Service</a>
+                        </li>
+                        <li (click)="changeBackground('aboutus')" class="navbar relative">
+                            <a [routerLink]="['/aboutus']">About Us</a>
+                        </li>
+                        <li (click)="changeBackground('blog')" class="navbar relative">
+                            <a [routerLink]="['/blog']">Blog</a>
+                        </li>
+                        <li (click)="changeBackground('landing')" class="navbar relative">
+                            <a [routerLink]="['/']">Home</a>
+                        </li>
+                    </ul>
+                    <div></div>
+                </div>
+                <div class="sign-btn">
+                    <button (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
+                        class="bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[13px] px-[20px] pt-[8px] pb-[10px] lg:text-[16px] lg:h-[40px] font-[poppins]">Contact
+                        Us
+                    </button>
+                </div>
             </div>
         </div>
         <div *ngIf="isLandingPage">
-            <div class=" pt-[50px] lg:pt-[110px] lg:w-[680px] lg:flex lg:justify-between lg:flex-col lg:mb-[160px]">
+            <div class=" pt-[50px] lg:pt-[110px] lg:w-[685px] lg:flex lg:justify-between lg:flex-col lg:mb-[160px]">
                 <div
                     class="text-[24px] sm:text-[32px] lg:text-[58px] lg:leading-[68px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
                     Accelerate
@@ -58,7 +60,7 @@
                 <div class="flex justify-center lg:justify-start gap-[20px] mt-[40px] mb-[30px]">
                     <button (click)="navigateToUrl('contactus')"
                         class="flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
-                        h-[45px] bg-[#76B900] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Contact
+                        h-[45px] bg-gradient-to-r from-[#76B900] to-[#9FBA02] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Contact
                         Us
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
