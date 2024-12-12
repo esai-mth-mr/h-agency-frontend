@@ -8,6 +8,7 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
 import { PostCreateComponent } from './components/post-create/post-create.component';
 import {ContactusComponent} from "./components/contactus/contactus.component";
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ServiceComponent } from './components/service/service.component';
 const routes: Routes = [
    { path: 'blog/create', component: PostCreateComponent }, // More specific route first
    { path: 'blog/:id', component: PostDetailComponent },    // Dynamic route second
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'landing', component: LandingComponent },
   {path: 'contactus', component: ContactusComponent},
   {path: 'aboutus', component: AboutusComponent},
+  {path: 'service', component: ServiceComponent},
   { path: '**', redirectTo: '' }
 ];
 @NgModule({
