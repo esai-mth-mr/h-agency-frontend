@@ -1,5 +1,6 @@
 <header class="flex justify-center ">
-    <div [ngStyle]="{'background-image': 'url(' + currentImgUrl + ')'}" class="header-background"></div>
+    <div [ngStyle]="{'background-image': 'linear-gradient(to right, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.8)), url(' + currentImgUrl + ')'}"
+        class="header-background"></div>
     <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
         <div class="px-[15px]  flex justify-between items-center py-[20px] z-1">
             <div class="company-logo flex items-center gap-[10px]">
@@ -55,10 +56,10 @@
                     tecnológica.
                 </div>
                 <div class="flex justify-center lg:justify-start gap-[20px] mt-[40px] mb-[30px]">
-                    <button
+                    <button (click)="navigateToUrl('contactus')"
                         class="flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
-                        h-[45px] bg-[#76B900] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Get
-                        Started
+                        h-[45px] bg-[#76B900] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Contact
+                        Us
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M13.8333 8.83333V13.8333C13.8333 14.2754 13.6577 14.6993 13.3452 15.0118C13.0326 15.3244 12.6087 15.5 12.1667 15.5H2.16667C1.72464 15.5 1.30072 15.3244 0.988155 15.0118C0.675595 14.6993 0.5 14.2754 0.5 13.8333V3.83333C0.5 3.39131 0.675595 2.96738 0.988155 2.65482C1.30072 2.34226 1.72464 2.16667 2.16667 2.16667H7.16667V3.83333H2.16667V13.8333H12.1667V8.83333H13.8333ZM8.83333 0.5V2.16667H12.655L6.16083 8.66083L7.33917 9.83917L13.8333 3.345V7.16667H15.5V0.5H8.83333Z"

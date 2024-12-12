@@ -81,7 +81,10 @@ export class HeaderComponent implements OnInit {
   changeBackground(item: string): void {
     this.currentImgUrl = this.headerImgUrl[item];
   };
-
+  navigateToUrl(url:string):void {
+    this.isLandingPage = false;  
+    this.router.navigate([url]);
+  }
   updateContentBasedOnUrl(): void {  
     // Reset all flags to false  
     this.isPostDetailPage = false;  
