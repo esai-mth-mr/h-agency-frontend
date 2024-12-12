@@ -123,3 +123,10 @@ a:hover{
     position: absolute;
     transform: translate(50%, -50%);
 }
+
+.btn-effect:hover{
+    background-size: 200%;
+}
+button{
+    transition: background-size 1.3s ease;
+}

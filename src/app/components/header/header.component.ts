@@ -84,7 +84,6 @@ export class HeaderComponent implements OnInit {
 
   //when you click contactuspage button
   navigateToUrl(url:string):void {
-    this.isContactUsPage = false;  
     this.router.navigate([url]);
   }
   updateContentBasedOnUrl(): void {  
