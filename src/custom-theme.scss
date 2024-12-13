@@ -13,9 +13,10 @@ html {
     typography: Roboto,
     density: 0,
   ));
+
   @include mat.expansion-overrides((
-    container-background-color: orange,
-    container-text-color: red,
+    container-background-color: linear-gradient(to right, #09090B99, #10101499),
+    container-text-color: #FFFFFFB2,
   ));
 }
 
