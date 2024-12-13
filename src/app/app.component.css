@@ -23,21 +23,6 @@ header::before{
     background-size: cover;
     background-repeat: no-repeat;
 } */
-header{
-    position: relative;
-    /* width: 100%; */
-    z-index: 1;
-}
-.header-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.3;
-    z-index: -1;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 
 

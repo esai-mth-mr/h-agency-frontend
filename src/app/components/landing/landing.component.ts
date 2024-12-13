@@ -1,15 +1,14 @@
 import {ChangeDetectionStrategy, Component, ɵɵInputTransformsFeature, signal} from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';   
-
+import { IndustryCarouselComponent } from '../industry-carousel/industry-carousel.component';
+import { FaqAccordionComponent } from '../faq-accordion/faq-accordion.component';
 @Component({
   selector: 'app-landing',
-  imports: [MatExpansionModule], 
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,  
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [IndustryCarouselComponent, FaqAccordionComponent],  
 
 })
 export class LandingComponent {
-  readonly panelOpenState = signal(false);
 
 }

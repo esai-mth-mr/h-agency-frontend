@@ -1,0 +1,169 @@
+<header class="flex justify-center ">
+    <div [ngStyle]="{'background-image': !isContactUsPage ? 'linear-gradient(to right, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.8)), url(' + currentImgUrl + ')':''}"
+        class="header-background"></div>
+    <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
+        <div class="header-nav">
+            <div class="px-[15px] border-b border-[#FFFFFF1A] mt-4  flex justify-between items-center py-[10px] z-1">
+                <div class="company-logo flex items-center gap-[10px]">
+                    <div><img src="/assets/images/logo.svg" alt="no logo file"></div>
+                    <div class="font-[poppins-medium] text-[14px] lg:text-[16px] text-color-gradient">Nvidia Basket
+                    </div>
+                </div>
+                <div class="">
+                    <ul
+                        class="hidden md:flex justify-center text-[14px] gap-[20px] lg:gap-[50px] lg:text-[16px] font-[poppins-light]">
+                        <li (click)="changeBackground('landing')" class="navbar relative flex justify-center">
+                            <a [routerLink]="['/']">Solution</a>
+                        </li>
+                        <li (click)="changeBackground('service')" class="navbar relative">
+                            <a [routerLink]="['/service']">Service</a>
+                        </li>
+                        <li (click)="changeBackground('aboutus')" class="navbar relative">
+                            <a [routerLink]="['/aboutus']">About Us</a>
+                        </li>
+                        <li (click)="changeBackground('blog')" class="navbar relative">
+                            <a [routerLink]="['/blog']">Blog</a>
+                        </li>
+                        <li (click)="changeBackground('landing')" class="navbar relative">
+                            <a [routerLink]="['/']">Home</a>
+                        </li>
+                    </ul>
+                    <div></div>
+                </div>
+                <div class="sign-btn">
+                    <button (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
+                        class="btn-effect bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[13px] px-[20px] pt-[8px] pb-[10px] lg:text-[16px] lg:h-[40px] font-[poppins]">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isLandingPage">
+            <div class=" pt-[50px] lg:pt-[110px] lg:w-[685px] lg:flex lg:justify-between lg:flex-col lg:mb-[160px]">
+                <div
+                    class="text-[24px] sm:text-[32px] lg:text-[58px] lg:leading-[68px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
+                    Accelerate
+                    Your Future with
+                    NVIDIA AI</div>
+                <div
+                    class="text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start lg:leading-[30px] font-[lato] mt-[20px] text-center text-[#BABABA]">
+                    Descubra
+                    uma vasta coleção
+                    de
+                    tutoriais, cursos
+                    online, livros
+                    recomendados e ferramentas de desenvolvimento para aprimorar suas habilidades e alcançar
+                    novos
+                    patamares na sua carreira
+                    tecnológica.
+                </div>
+                <div class="flex justify-center lg:justify-start gap-[20px] mt-[40px] mb-[30px]">
+                    <button (click)="navigateToUrl('contactus')"
+                        class="btn-effect flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
+                        h-[45px] bg-gradient-to-r from-[#76B900] to-[#9FBA02] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Contact
+                        Us
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.8333 8.83333V13.8333C13.8333 14.2754 13.6577 14.6993 13.3452 15.0118C13.0326 15.3244 12.6087 15.5 12.1667 15.5H2.16667C1.72464 15.5 1.30072 15.3244 0.988155 15.0118C0.675595 14.6993 0.5 14.2754 0.5 13.8333V3.83333C0.5 3.39131 0.675595 2.96738 0.988155 2.65482C1.30072 2.34226 1.72464 2.16667 2.16667 2.16667H7.16667V3.83333H2.16667V13.8333H12.1667V8.83333H13.8333ZM8.83333 0.5V2.16667H12.655L6.16083 8.66083L7.33917 9.83917L13.8333 3.345V7.16667H15.5V0.5H8.83333Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                    <button
+                        class="text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] learn-more border-[1px] border-solid border-[#FFFFFF66] h-[45px] rounded-[40px] px-[40px] font-[poppins-light]">Learn
+                        More</button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isBlogPage">
+            <div class="px-[35px]">
+                <div
+                    class=" pt-[50px] pb-[40px] lg:pt-[160px]  lg:flex lg:justify-between lg:flex-col lg:mb-[160px] lg:px-[100px]">
+                    <div
+                        class="text-[16px] text-center lg:text-start text-color-gradient-1 font-[poppins-bold] md:text-[20px]">
+                        Blogs</div>
+                    <div
+                        class="text-[24px] sm:text-[32px] lg:text-[58px] lg:leading-[68px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
+                        Insights and Innovations</div>
+                    <div class=" text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start
+                        lg:leading-[30px] font-[lato] mt-[20px] text-center text-[#BABABA]">
+                        Explore the latest trends, technologies, and ideas driving the future of AI and
+                        NVIDIA-powered solutions.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isPostDetailPage">
+            <div class="min-[440px]:px-[35px] flex">
+                <div class="flex justify-center mt-[50px] lg:mt-[160px]">
+                    <button *ngIf="isPrevBtn" (click)="arrowPost('previous')"
+                        class="previous_post flex items-center justify-center w-[30px] h-[30px] md:w-[38px] md:h-[38px] bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <div
+                    class=" pt-[50px] pb-[40px] lg:pt-[160px]  lg:flex lg:justify-between lg:flex-col lg:mb-[160px] lg:mx-[20px] lg:px-[70px]">
+                    <div
+                        class="text-[16px] text-center lg:text-start text-color-gradient-1 font-[poppins-bold] md:text-[20px]">
+                        <div class="flex border-[2px] border-white rounded-md !inline-flex">
+                            <button
+                                class="bg-[#131517] text-white px-2 py-1 rounded-md">{{headerInfo.category}}</button>
+                            <div class="text-gray-400 bg-white pt-[4px] px-[5px] text-[#232E52]">
+                                {{headerInfo.created_at | date: 'dd/MM/yyyy'}}
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="text-[24px] sm:text-[32px] lg:text-[50px] lg:leading-[60px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
+                        {{headerInfo.title}}</div>
+                </div>
+                <div class="flex justify-center mt-[50px] lg:mt-[160px]">
+                    <button *ngIf="isNextBtn" (click)="arrowPost('next')"
+                        class="next_post flex items-center justify-center w-[30px] h-[30px] md:w-[38px] md:h-[38px] bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div *ngIf="isAboutPage">
+            <div class="px-[35px]">
+                <div
+                    class=" pt-[50px] pb-[40px] lg:pt-[160px]  lg:flex lg:justify-between lg:flex-col lg:mb-[160px] lg:px-[100px]">
+                    <div
+                        class="text-[16px] text-center lg:text-start text-color-gradient-1 font-[poppins-bold] md:text-[20px]">
+                        About Us</div>
+                    <div
+                        class="text-[24px] sm:text-[32px] lg:text-[50px] lg:leading-[60px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
+                        Shaping the Future of AI-Driven Computing</div>
+                    <div class=" text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start
+                        lg:leading-[30px] font-[lato] mt-[20px] text-center text-[#BABABA]">
+                        Delivering NVIDIA-powered innovations to empower industries and redefine possibilities.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isServicePage">
+            <div class="px-[35px]">
+                <div
+                    class=" pt-[50px] pb-[40px] lg:pt-[160px]  lg:flex lg:justify-between lg:flex-col lg:mb-[160px] lg:px-[100px]">
+                    <div
+                        class="text-[16px] text-center lg:text-start text-color-gradient-1 font-[poppins-bold] md:text-[20px]">
+                        Services</div>
+                    <div
+                        class="text-[24px] sm:text-[32px] lg:text-[50px] lg:leading-[60px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
+                        Tailored AI Solutions with NVIDIA Expertise</div>
+                    <div class=" text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start
+                        lg:leading-[30px] font-[lato] mt-[20px] text-center text-[#BABABA]">
+                        Explore our comprehensive offerings designed to empower your business in the AI-driven era.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
