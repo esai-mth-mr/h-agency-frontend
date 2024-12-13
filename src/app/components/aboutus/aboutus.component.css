@@ -1,23 +1,32 @@
 ul {
-    list-style: none; /* Remove default bullets */
-    padding: 0;
-  }
-  li {
-    position: relative;
-    padding-left: 20px; /* Space for the circle */
-  }
-  li::before {
-    content: ""; /* Empty content for the circle */
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%); /* Center vertically */
-    width: 10px; /* Circle size */
-    height: 10px; /* Circle size */
-    /* background-color: blue;  */
-    background: linear-gradient(to bottom, #E7FFBC, #76B900);
-    /* -webkit-background-clip: text;
+  list-style: none;
+  /* Remove default bullets */
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 20px;
+  /* Space for the circle */
+}
+
+li::before {
+  content: "";
+  /* Empty content for the circle */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  /* Center vertically */
+  width: 10px;
+  /* Circle size */
+  height: 10px;
+  /* Circle size */
+  /* background-color: blue;  */
+  background: linear-gradient(to bottom, #E7FFBC, #76B900);
+  /* -webkit-background-clip: text;
     background-clip: text;
     color: transparent; */
-    border-radius: 50%; /* Make it a circle */
-  }
+  border-radius: 50%;
+  /* Make it a circle */
+}

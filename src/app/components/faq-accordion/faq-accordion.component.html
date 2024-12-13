@@ -31,26 +31,26 @@
 
 <!-- <section class="text-white p-8"> -->
 <div class="sm:flex justify-between items-center px-[15px]  mb-[20px] sm:mb-0 mt-[130px]">
-    <div class="mt-[20px] flex">
-        <div>
+    <div class="mt-[20px] flex flex-wrap">
+        <div class="w-full lg:w-[40%]">
             <div
                 class=" section-title text-color-gradient-1 text-[15px] md:text-[18px] font-[poppins-bold] text-center sm:text-start">
                 Frequently Asked Questions
             </div>
             <div
-                class="carousel-title mb-[30px] lg:mb-[40px] text-color-gradient font-[poppins-bold] sm:text-[30px] text-[24px] lg:text-[40px]">
+                class="carousel-title mb-[30px] text-center sm:text-start lg:mb-[40px] text-color-gradient font-[poppins-bold] sm:text-[30px] text-[24px] lg:text-[40px]">
                 Got Questions? We've Got Answers.
             </div>
         </div>
-        <mat-accordion class="rounded-lg shadow-lg">
+        <mat-accordion class="w-full lg:w-[60%] rounded-lg shadow-lg">
             <!-- Question 1 -->
             <mat-expansion-panel class="py-2 border border-[#393b3c] hideToggle">
                 <mat-expansion-panel-header>
                     <mat-panel-title class="text-[20px] text-blue-500 !text-white">
                         How does NVIDIA technology help businesses grow?
                     </mat-panel-title>
-                    <mat-icon *ngIf="!panelOpenState" class="toggle-icon">expand_more</mat-icon>
-                    <mat-icon *ngIf="panelOpenState" class="toggle-icon">expand_less</mat-icon>
+                    <!-- <mat-icon *ngIf="!panelOpenState" class="toggle-icon">expand_more</mat-icon>
+                    <mat-icon *ngIf="panelOpenState" class="toggle-icon">expand_less</mat-icon> -->
                 </mat-expansion-panel-header>
                 <p class="text-[#FFFFFFB2]">
                     NVIDIA's GPUs and software tools enable faster, smarter AI-driven solutions, from edge devices to
