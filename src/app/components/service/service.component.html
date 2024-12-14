@@ -50,79 +50,75 @@
                 <div class="services-content ">
                     <div class="container flex flex-wrap justify-center mt-[30px] sm:mt-[50px] gap-[30px]">
 
-                        <div class="service-category  border border-solid border-[#FFFFFF29] rounded-2xl px-[20px]">
+                        <div class="service-category rounded-2xl px-[20px]">
                             <div
                                 class="category-title text-center 2xl:text-start sm:text-[25px] text-[19px] lg:text-[35px] font-[poppins-bold] text-color-gradient mb-[30px]">
                                 AI
                                 Software
                                 Development</div>
                             <div class="category-content flex flex-wrap justify-center gap-[30px]">
-                                <div
-                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl py-[50px] px-[20px]">
+                                <div *ngFor="let service of service_1"
+                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl pt-[50px] pb-[30px] px-[20px]">
                                     <div class="container">
-                                        <div class="service-img"><img src="assets/images/service/1.svg"></div>
+                                        <div class="service-img"><img [src]="service.imageUrl"></div>
                                         <div class="service-title mt-[15px]">
-                                            <div class="text-[20px] font-[poppins-bold]">Custom AI Application
-                                                Development
+                                            <div class="text-[20px] font-[poppins-bold]">{{service.title}}
                                             </div>
                                         </div>
                                         <div class="service-content mt-[10px]">
-                                            <div class="text-[18px] text-[#C2C2C2]">Tailored AI solutions leveraging
-                                                NVIDIA
-                                                technologies for innovation.</div>
+                                            <div class="text-[18px] text-[#C2C2C2]">{{service.description}}</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl py-[50px] px-[20px]">
-                                    <div class="container">
-                                        <div class="service-img"><img src="assets/images/service/1.svg"></div>
-                                        <div class="service-title mt-[15px]">
-                                            <div class="text-[20px] font-[poppins-bold]">Custom AI Application
-                                                Development
-                                            </div>
-                                        </div>
-                                        <div class="service-content mt-[10px]">
-                                            <div class="text-[18px] text-[#C2C2C2]">Tailored AI solutions leveraging
-                                                NVIDIA
-                                                technologies for innovation.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl py-[50px] px-[20px]">
-                                    <div class="container">
-                                        <div class="service-img"><img src="assets/images/service/1.svg"></div>
-                                        <div class="service-title mt-[15px]">
-                                            <div class="text-[20px] font-[poppins-bold]">Custom AI Application
-                                                Development
-                                            </div>
-                                        </div>
-                                        <div class="service-content mt-[10px]">
-                                            <div class="text-[18px] text-[#C2C2C2]">Tailored AI solutions leveraging
-                                                NVIDIA
-                                                technologies for innovation.</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl py-[50px] px-[20px]">
-                                    <div class="container">
-                                        <div class="service-img"><img src="assets/images/service/1.svg"></div>
-                                        <div class="service-title mt-[15px]">
-                                            <div class="text-[20px] font-[poppins-bold]">Custom AI Application
-                                                Development
-                                            </div>
-                                        </div>
-                                        <div class="service-content mt-[10px]">
-                                            <div class="text-[18px] text-[#C2C2C2]">Tailored AI solutions leveraging
-                                                NVIDIA
-                                                technologies for innovation.</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
+
+
+                        <div class="service-category rounded-2xl px-[20px] mt-[50px]">
+                            <div
+                                class="category-title text-center 2xl:text-start sm:text-[25px] text-[19px] lg:text-[35px] font-[poppins-bold] text-color-gradient mb-[30px]">
+                                AI Infrastructure Solutions</div>
+                            <div class="category-content flex flex-wrap justify-center gap-[30px]">
+                                <div *ngFor="let service of service_2"
+                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl pt-[50px] pb-[30px] px-[20px]">
+                                    <div class="container">
+                                        <div class="service-img"><img [src]="service.imageUrl"></div>
+                                        <div class="service-title mt-[15px]">
+                                            <div class="text-[20px] font-[poppins-bold]">{{service.title}}
+                                            </div>
+                                        </div>
+                                        <div class="service-content mt-[10px]">
+                                            <div class="text-[18px] text-[#C2C2C2]">{{service.description}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="service-category rounded-2xl px-[20px] mt-[50px]">
+                            <div
+                                class="category-title text-center 2xl:text-start sm:text-[25px] text-[19px] lg:text-[35px] font-[poppins-bold] text-color-gradient mb-[30px]">
+                                Specialized AI Solutions</div>
+                            <div class="category-content flex flex-wrap justify-center gap-[30px]">
+                                <div *ngFor="let service of service_3"
+                                    class="service w-[310px] border border-solid border-[#FFFFFF29] rounded-2xl pt-[50px] pb-[30px] px-[20px]">
+                                    <div class="container">
+                                        <div class="service-img"><img [src]="service.imageUrl"></div>
+                                        <div class="service-title mt-[15px]">
+                                            <div class="text-[20px] font-[poppins-bold]">{{service.title}}
+                                            </div>
+                                        </div>
+                                        <div class="service-content mt-[10px]">
+                                            <div class="text-[18px] text-[#C2C2C2]">{{service.description}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

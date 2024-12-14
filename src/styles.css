@@ -114,9 +114,30 @@ a:hover {
     color: transparent;
 }
 
+.select-a {
+    background: linear-gradient(to bottom, #E7FFBC, #76B900);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .navbar a:hover::after {
     width: 20px;
 }
+
+.navbar a.active::after {
+    /* or any color */
+    width: 20px;
+    /* Add the width */
+}
+
+.navbar .active::after {
+    /* background: black; */
+    /* or any color */
+    width: 20px;
+    /* Add the width */
+}
+
 
 * {
     box-sizing: border-box;

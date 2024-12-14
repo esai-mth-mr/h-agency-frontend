@@ -1,9 +1,13 @@
-<header class="flex justify-center ">
-    <div [ngStyle]="{'background-image': !isContactUsPage ? 'linear-gradient(to right, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.8)), url(' + currentImgUrl + ')':''}"
-        class="header-background"></div>
-    <div class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px]">
-        <div class="header-nav">
-            <div class="px-[15px] border-b border-[#FFFFFF1A] mt-4  flex justify-between items-center py-[10px] z-1">
+<header class="flex justify-center z-10">
+    <div [ngStyle]=" {'background-image': !isContactUsPage
+    ? 'linear-gradient(to right, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.8)), url(' + currentImgUrl + ')' :''}"
+        class="header-background">
+    </div>
+    <div
+        class="container sm:max-w-[640px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] pt-[50px]">
+        <div [ngStyle]="{'background-color': backgroundColor}" class="header-nav fixed top-0 left-0 right-0 z-10 ">
+            <div
+                class="px-[15px] border-b border-[#FFFFFF1A] mt-2  flex justify-between md:justify-around items-center py-[10px] z-1">
                 <div class="company-logo flex items-center gap-[10px]">
                     <div><img src="/assets/images/logo.svg" alt="no logo file"></div>
                     <div class="font-[poppins-medium] text-[14px] lg:text-[16px] text-color-gradient">Nvidia Basket
@@ -15,31 +19,63 @@
                         <li (click)="changeBackground('landing')" class="navbar relative flex justify-center">
                             <a [routerLink]="['/']">Solution</a>
                         </li>
-                        <li (click)="changeBackground('service')" class="navbar relative">
-                            <a [routerLink]="['/service']">Service</a>
+                        <li (click)="changeBackground('service')" [ngClass]="{'select-a':isServicePage}"
+                            class="navbar relative">
+                            <a [class.active]="isServicePage" [routerLink]="['/service']">Service</a>
                         </li>
-                        <li (click)="changeBackground('aboutus')" class="navbar relative">
-                            <a [routerLink]="['/aboutus']">About Us</a>
+                        <li (click)="changeBackground('aboutus')" class="navbar relative"
+                            [ngClass]="{'select-a':isAboutPage}">
+                            <a [class.active]="isAboutPage" [routerLink]="['/aboutus']">About Us</a>
                         </li>
-                        <li (click)="changeBackground('blog')" class="navbar relative">
-                            <a [routerLink]="['/blog']">Blog</a>
+                        <li (click)="changeBackground('blog')" class="navbar relative"
+                            [ngClass]="{'select-a':isBlogPage}">
+                            <a [class.active]="isBlogPage" [routerLink]="['/blog']">Blog</a>
                         </li>
-                        <li (click)="changeBackground('landing')" class="navbar relative">
-                            <a [routerLink]="['/']">Home</a>
+                        <li (click)="changeBackground('landing')" class="navbar relative"
+                            [ngClass]="{'select-a':isLandingPage}">
+                            <a [class.active]="isLandingPage" [routerLink]="['/']">Home</a>
                         </li>
                     </ul>
                     <div></div>
                 </div>
-                <div class="sign-btn">
+                <div class="sign-btn md:block hidden">
                     <button (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
-                        class="btn-effect bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[13px] px-[20px] pt-[8px] pb-[10px] lg:text-[16px] lg:h-[40px] font-[poppins]">
+                        class="btn-effect bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[12px] px-[20px] pt-[8px] pb-[10px] lg:text-[15px] lg:h-[40px] font-[poppins]">
                         Contact Us
                     </button>
+                </div>
+                <div class="md:hidden header-menu">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon class="text-white text-color-gradient">more_vert</mat-icon>
+                    </button>
+                    <mat-menu class="w-[200px]" #menu="matMenu">
+                        <button mat-menu-item (click)="navigateToUrl('')">
+                            <mat-icon class="!text-[#131517]">home</mat-icon>
+                            <span class="text-[#44474E]">Home</span>
+                        </button>
+                        <button mat-menu-item (click)="navigateToUrl('service')">
+                            <mat-icon class="!text-[#131517]">share</mat-icon>
+                            <span class="text-[#44474E]">Service</span>
+                        </button>
+                        <button mat-menu-item (click)="navigateToUrl('aboutus')">
+                            <mat-icon class="!text-[#131517]">leak_add</mat-icon>
+                            <span class="text-[#44474E]">About Us</span>
+                        </button>
+                        <button mat-menu-item (click)="navigateToUrl('blog')">
+                            <mat-icon class="!text-[#131517]">computer</mat-icon>
+                            <span class="text-[#44474E]">Blog</span>
+                        </button>
+                        <button mat-menu-item (click)="navigateToUrl('contactus')">
+                            <mat-icon class="!text-[#131517]">group_add</mat-icon>
+                            <span class="text-[#44474E]">Contact Us</span>
+                        </button>
+                    </mat-menu>
                 </div>
             </div>
         </div>
         <div *ngIf="isLandingPage">
-            <div class=" pt-[50px] lg:pt-[110px] lg:w-[685px] lg:flex lg:justify-between lg:flex-col lg:mb-[160px]">
+            <div
+                class=" pt-[50px] px-[15px] lg:pt-[110px] lg:w-[685px] lg:flex lg:justify-between lg:flex-col lg:mb-[160px]">
                 <div
                     class="text-[24px] sm:text-[32px] lg:text-[58px] lg:leading-[68px] text-center lg:text-start font-[poppins-bold] text-color-gradient">
                     Accelerate

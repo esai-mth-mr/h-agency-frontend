@@ -9,6 +9,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material.module'; // Import your Material module 
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     //HeaderHeroContentComponent,
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     MaterialModule,
     //CommonModule
     BlogComponent,
-    HeaderComponent
+    HeaderComponent, 
+    FooterComponent
   ],
 
   providers: [

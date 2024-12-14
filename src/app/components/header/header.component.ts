@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { HostListener, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit,Renderer2, ElementRef } from '@angular/core';
 import { RouterModule, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 //Angular Material
-import {MatExpansionModule} from '@angular/material/expansion';
-import {ChangeDetectionStrategy, signal} from '@angular/core';
 import { BackgroundService } from '../../shared/background.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+
 
 interface HeaderInfo {
   status: string;
@@ -18,7 +20,7 @@ interface HeaderInfo {
   //standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  imports: [CommonModule, RouterModule], // Add RouterModule here
+  imports: [CommonModule, RouterModule, MatButtonModule, MatMenuModule, MatIconModule], // Add RouterModule here
 })
 export class HeaderComponent implements OnInit {
   headerBackgroundStyle: { [key: string]: string } = {};
@@ -36,6 +38,20 @@ export class HeaderComponent implements OnInit {
   arrowPost(direction: string) {
     this.backgroundService.updateArrowDirection(direction);
   };
+  backgroundColor = ''; // Initial background color 
+    //
+    @HostListener('window:scroll', [])
+    onWindowScroll() {  
+      const scrollY = window.scrollY; // Get current scroll position  
+      // Change background color based on scroll position (example conditions)  
+      if (scrollY > 100) {  
+        this.backgroundColor = '#0f0f13';  
+      } else if (scrollY < 100) {  
+        this.backgroundColor = '';  
+      }
+    }
+
+
 
   constructor(
     private http: HttpClient, 
@@ -63,6 +79,7 @@ export class HeaderComponent implements OnInit {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.currentUrl = event.url;
+        console.log("hello")
         this.updateContentBasedOnUrl();
          // This should now log the correct URL
       });
@@ -87,6 +104,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([url]);
   }
   updateContentBasedOnUrl(): void {  
+
     // Reset all flags to false  
     this.isPostDetailPage = false;  
     this.isBlogPage = false;  
@@ -95,6 +113,7 @@ export class HeaderComponent implements OnInit {
     this.isServicePage = false;
     this.isContactUsPage = false;
     // Check for 'blog' in the URL  
+    console.log(this.currentUrl)
     if (this.currentUrl.includes('blog')) {  
         const hasPostId = !!this.currentUrl.split('/')[2]; // Check if there's a post ID  
 
@@ -109,6 +128,7 @@ export class HeaderComponent implements OnInit {
     // Check for 'landing' in the URL  
     else if (this.currentUrl.split('/')[1] === "") {   
       console.log(this.currentUrl.split('/')[1])
+      console.log("landing")
         this.changeBackground('landing');  
         this.isLandingPage = true;  
     }  
