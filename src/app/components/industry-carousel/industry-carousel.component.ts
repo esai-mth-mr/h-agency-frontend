@@ -81,6 +81,7 @@ export class IndustryCarouselComponent {
   // Start auto-slide
   startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
+      console.log("hello")
       this.nextSlide(); // Automatically go to the next slide
     }, 3000); // Change slide every 3 seconds
   }

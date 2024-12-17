@@ -13,38 +13,41 @@
                 </div>
             </div>
             <div class="message-area pt-[50px]">
-                <div class="flex flex-wrap gap-[35px]">
-                    <mat-form-field class="lg:flex-1 example-full-width">
-                        <mat-label>Your Name</mat-label>
-                        <input class="input" matInput placeholder="Ex. William Adams">
-                    </mat-form-field>
-                    <mat-form-field class="lg:flex-1 example-full-width">
-                        <mat-label>Email Address</mat-label>
-                        <input class="input" matInput placeholder="Ex. william@gmail.com">
-                    </mat-form-field>
-                    <mat-form-field class="lg:flex-1 example-full-width">
-                        <mat-label>Phone Number(Optional)</mat-label>
-                        <input class="input" matInput placeholder="123-456-7890">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Leave a comment</mat-label>
-                        <textarea class="input" matInput placeholder="Ex. It makes me feel..."></textarea>
-                    </mat-form-field>
-                </div>
-                <div class="mt-[20px] flex justify-center lg:justify-start">
-                    <button
-                        class="flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
-                                h-[45px] bg-[#76B900] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Leave
-                        us a Message
-                        <svg width="13" height="13  " viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="flex flex-wrap gap-[35px]">
+                        <mat-form-field class="lg:flex-1 example-full-width">
+                            <mat-label>Your Name</mat-label>
+                            <input class="input" matInput formControlName="name" placeholder="Ex. William Adams">
+                        </mat-form-field>
+                        <mat-form-field class="lg:flex-1 example-full-width">
+                            <mat-label>Email Address</mat-label>
+                            <input class="input" matInput formControlName="email" placeholder="Ex. william@gmail.com">
+                        </mat-form-field>
+                        <mat-form-field class="lg:flex-1 example-full-width">
+                            <mat-label>Phone Number(Optional)</mat-label>
+                            <input class="input" matInput formControlName="phone" placeholder="123-456-7890">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Leave a comment</mat-label>
+                            <textarea class="input" formControlName="content" matInput
+                                placeholder="Ex. It makes me feel..."></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="mt-[20px] flex justify-center lg:justify-start">
+                        <button type="submit"
+                            class="flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
+                                    h-[45px] bg-[#76B900] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Leave
+                            us a Message
+                            <svg width="13" height="13  " viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
             </div>
 
 

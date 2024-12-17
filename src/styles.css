@@ -88,7 +88,7 @@ li {
     background-color: gradient(to right, #76B900, #9FBA02);
 }
 
-.post:hover {
+.card-effect:hover {
     border: 2px solid #76B900;
 }
 
