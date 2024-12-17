@@ -1,0 +1,8 @@
+.custom-snackbar {
+    padding: 16px;
+    background-color: #323232;
+    color: #fff;
+    margin-bottom: 8px;
+    /* Space between Snackbars */
+    border-radius: 4px;
+}
