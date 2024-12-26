@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BlogComponent } from './components/blog/blog.component';
-import { LandingComponent } from './components/landing/landing.component';
+import { LandingComponent } from './components/pages/landing/landing.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MaterialModule } from './material.module'; // Import your Material module 
+import { MaterialModule } from './material.module'; // Import your Material module
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NgxToastModule } from '@angular-magic/ngx-toast';
+
 @NgModule({
   declarations: [
     //HeaderHeroContentComponent,
@@ -17,22 +19,20 @@ import { FooterComponent } from './components/footer/footer.component';
     //BlogComponent,
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule,  
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
     LandingComponent,
     MaterialModule,
     //CommonModule
     BlogComponent,
-    HeaderComponent, 
-    FooterComponent
+    HeaderComponent,
+    FooterComponent,
+    NgxToastModule,
   ],
 
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
   //changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppModule { 
-
-}
+export class AppModule {}

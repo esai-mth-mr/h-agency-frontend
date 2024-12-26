@@ -1,24 +1,26 @@
-<main class="main bg-[#131517]">
+<main class="main bg-[#1b1e22]">
     <app-header></app-header>
     <!-- <app-landing></app-landing> -->
+    <ngx-toast-center></ngx-toast-center>
     <router-outlet></router-outlet>
     <div class="get-started-sub flex justify-center mt-[50px] mb-[60px] px-[15px] sm:px-[0px]">
+        <!-- bg-gradient-to-r from-[#09090B99] to-[#10101499] -->
         <div
-            class="container bg-gradient-to-r from-[#09090B99] to-[#10101499] flex flex-wrap items-center justify- md:justify-around pt-[55px] px-[30px] pb-[60px] md:pb-[40px] md:pt-[40px] bg-[#09090B99] items-center w-[525px] sm:w-[510px] md:w-[690px] lg:w-[930px] xl:w-[1110px] rounded-[15px] border-[1px] border-[#FFFFFF33] border-solid px-[20px] py-[30px]">
+            class="container  border !border-[#53647b] !bg-[#242b35] flex flex-wrap items-center justify- md:justify-around pt-[55px] px-[30px] pb-[60px] md:pb-[40px] md:pt-[40px] bg-[#09090B99] items-center w-[525px] sm:w-[510px] md:w-[690px] lg:w-[930px] xl:w-[1110px] rounded-[15px] border-[1px] border-[#FFFFFF33] border-solid px-[20px] py-[30px]">
             <div class="w-full md:w-[50%]">
                 <div class="text-[20px] font-[poppins-bold] button-color-gradient  text-color-gradient-1">Get
                     Started
                 </div>
 
                 <div
-                    class="text-color-gradient text-[24px] leading-[40px] font-[poppins] md:text-[35px] lg:text-[30px] xl:text-[35px] leading-[55px]">
+                    class=" text-color-gradient text-[24px] leading-[40px] font-[poppins] md:text-[35px] lg:text-[30px] xl:text-[35px] leading-[55px]">
                     Ready to Transform Your Business with AI?
                 </div>
             </div>
             <div class="w-full md:w-[50%] lg:w-[40%] xl:w-[30%] flex justify-center mt-[20px] md:mt-[0px]">
 
                 <button (click)="navigateToUrl('contactus')"
-                    class="btn-effect rounded-full gap-[10px] text-[18px] font-[poppins-medium] bg-gradient-to-r from-[#76B900] to-[#9FBA02] w-full py-[15px] px-[25px] flex justify-center items-center">Contact
+                    class="btn-effect rounded-full gap-[10px] text-[18px] font-[poppins-semibold] bg-gradient-to-r from-[#76B900] to-[#9FBA02] w-full py-[15px] px-[25px] flex justify-center items-center text-white">Contact
                     Us
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

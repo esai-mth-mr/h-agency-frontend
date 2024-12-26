@@ -39,10 +39,10 @@
                     <div></div>
                 </div>
                 <div class="sign-btn md:block hidden">
-                    <button (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
-                        class="btn-effect bg-gradient-to-r from-[#202223] to-[#2A2A2A] rounded-[5px] text-[12px] px-[20px] pt-[8px] pb-[10px] lg:text-[15px] lg:h-[40px] font-[poppins]">
+                    <div (click)="changeBackground('contactus')" [routerLink]="['/contactus']"
+                        class="cursor-pointer btn-effect bg-[#9FBA02] hover:bg-[#9FBA02] text-white rounded-[7px] text-white text-[12px] px-[16px] pt-[8px] pb-[9px] lg:text-[15px] lg:h-[40px] font-[poppins-semibold]">
                         Contact Us
-                    </button>
+                    </div>
                 </div>
                 <div class="md:hidden header-menu">
                     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -82,7 +82,7 @@
                     Your Future with
                     NVIDIA AI</div>
                 <div
-                    class="text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start lg:leading-[30px] font-[lato] mt-[20px] text-center text-[#BABABA]">
+                    class="text-[16px] leading-[24px] sm:text-[18px] lg:text-[20px] lg:text-start lg:leading-[30px] font-[lato] mt-[20px] text-center text-white">
                     Descubra
                     uma vasta coleção
                     de
@@ -94,19 +94,21 @@
                     tecnológica.
                 </div>
                 <div class="flex justify-center lg:justify-start gap-[20px] mt-[40px] mb-[30px]">
-                    <button (click)="navigateToUrl('contactus')"
-                        class="btn-effect flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
-                        h-[45px] bg-gradient-to-r from-[#76B900] to-[#9FBA02] border-[1px] border-[#FFFFFF66] border-solid rounded-[40px] px-[40px] font-[poppins-light]">Contact
+                    <div (click)="navigateToUrl('contactus')"
+                        class="cursor-pointer btn-effect flex button-color-gradient justify-center items-center gap-[5px] text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] lg:px-[40px] get-started 
+                        h-[45px] bg-[#9FBA02] hover:bg-[#c8f854] border-[1px] text-white border-[#FFFFFF66] border-solid rounded-[13px] px-[40px] font-[poppins-semibold] w-[210px]">
+                        Contact
                         Us
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M13.8333 8.83333V13.8333C13.8333 14.2754 13.6577 14.6993 13.3452 15.0118C13.0326 15.3244 12.6087 15.5 12.1667 15.5H2.16667C1.72464 15.5 1.30072 15.3244 0.988155 15.0118C0.675595 14.6993 0.5 14.2754 0.5 13.8333V3.83333C0.5 3.39131 0.675595 2.96738 0.988155 2.65482C1.30072 2.34226 1.72464 2.16667 2.16667 2.16667H7.16667V3.83333H2.16667V13.8333H12.1667V8.83333H13.8333ZM8.83333 0.5V2.16667H12.655L6.16083 8.66083L7.33917 9.83917L13.8333 3.345V7.16667H15.5V0.5H8.83333Z"
                                 fill="white" />
                         </svg>
-                    </button>
-                    <button (click)="navigateToUrl('aboutus')"
-                        class="btn-effect text-[14px] h-[40px] lg:text-[18px] lg:h-[50px] learn-more border-[1px] border-solid border-[#FFFFFF66] h-[45px] rounded-[40px] px-[40px] font-[poppins-light]">Learn
-                        More</button>
+                    </div>
+                    <div (click)="navigateToUrl('aboutus')"
+                        class="cursor-pointer btn-effect text-[14px] text-center h-[40px] lg:text-[18px] lg:h-[50px] learn-more border-[1px] text-white border-solid border-[#9FBA02] h-[45px] rounded-[13px] px-[40px] pt-[10px] font-[poppins-semibold] w-[210px]">
+                        Learn
+                        More</div>
                 </div>
             </div>
         </div>

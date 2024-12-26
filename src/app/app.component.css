@@ -4,7 +4,8 @@
     text-align: center; */
 }
 
-th, td {
+th,
+td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -12,6 +13,7 @@ th, td {
 table {
     margin: 0 auto;
 }
+
 /* 
 header::before{
     position: absolute;
@@ -23,6 +25,3 @@ header::before{
     background-size: cover;
     background-repeat: no-repeat;
 } */
-
-
-

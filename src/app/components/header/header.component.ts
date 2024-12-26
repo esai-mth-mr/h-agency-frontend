@@ -39,14 +39,14 @@ export class HeaderComponent implements OnInit {
     this.backgroundService.updateArrowDirection(direction);
   };
   backgroundColor = ''; // Initial background color 
-    //
+    //  
     @HostListener('window:scroll', [])
     onWindowScroll() {  
       const scrollY = window.scrollY; // Get current scroll position  
       // Change background color based on scroll position (example conditions)  
-      if (scrollY > 100) {  
+      if (scrollY > 10) {  
         this.backgroundColor = '#0f0f13';  
-      } else if (scrollY < 100) {  
+      } else if (scrollY < 10) {  
         this.backgroundColor = '';  
       }
     }
